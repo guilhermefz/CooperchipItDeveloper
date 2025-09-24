@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "CooperchipItDeveloper/1.0.0": {
+        "runtime": {
+          "CooperchipItDeveloper.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CooperchipItDeveloper/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
