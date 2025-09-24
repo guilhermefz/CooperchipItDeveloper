@@ -1,3 +1,10 @@
+using AutoMapper;
+using Cooperchip.ItDeveloper.Data.Data.ORM;
+using Cooperchip.ItDeveloper.Mvc.Mappers;
+using Cooperchip.ItDeveloper.Mvc.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+
 namespace CooperchipItDeveloper
 {
     public class Program
@@ -6,12 +13,14 @@ namespace CooperchipItDeveloper
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddAutoMapper(typeof(PacienteMapper));
+
+            builder.Services.AddDbContext<ITDeveloperDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddScoped<PacienteService>();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -34,3 +43,5 @@ namespace CooperchipItDeveloper
         }
     }
 }
+
+

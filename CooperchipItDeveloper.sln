@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36401.2 d17.14
+VisualStudioVersion = 17.14.36401.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CooperchipItDeveloper", "CooperchipItDeveloper\CooperchipItDeveloper.csproj", "{3D7802C6-A3F1-4717-B35A-EB70184745BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CooperchipItDeveloper.Mvc", "CooperchipItDeveloper\CooperchipItDeveloper.Mvc.csproj", "{3D7802C6-A3F1-4717-B35A-EB70184745BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentation", "1.Presentation", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Domain", "3.Domain", "{7D4CF6D1-A5A7-47E7-8793-723060CBC4C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Infra", "4.Infra", "{8254F2F8-23EF-4D57-848F-FEB9CF250A9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CooperchipItDeveloper.Domain", "CooperchipItDeveloper.Domain\CooperchipItDeveloper.Domain.csproj", "{192C453F-7128-4FD9-AE52-6EDE8C99ABD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CooperchipItDeveloper.Data", "CooperchipItDeveloper.Data\CooperchipItDeveloper.Data.csproj", "{15D43E24-D083-49D4-9960-F22A7DC8F30D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +27,22 @@ Global
 		{3D7802C6-A3F1-4717-B35A-EB70184745BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D7802C6-A3F1-4717-B35A-EB70184745BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D7802C6-A3F1-4717-B35A-EB70184745BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{192C453F-7128-4FD9-AE52-6EDE8C99ABD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{192C453F-7128-4FD9-AE52-6EDE8C99ABD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{192C453F-7128-4FD9-AE52-6EDE8C99ABD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{192C453F-7128-4FD9-AE52-6EDE8C99ABD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15D43E24-D083-49D4-9960-F22A7DC8F30D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D43E24-D083-49D4-9960-F22A7DC8F30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D43E24-D083-49D4-9960-F22A7DC8F30D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D43E24-D083-49D4-9960-F22A7DC8F30D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3D7802C6-A3F1-4717-B35A-EB70184745BD} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{192C453F-7128-4FD9-AE52-6EDE8C99ABD4} = {7D4CF6D1-A5A7-47E7-8793-723060CBC4C6}
+		{15D43E24-D083-49D4-9960-F22A7DC8F30D} = {8254F2F8-23EF-4D57-848F-FEB9CF250A9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DCE6CFC1-18FC-421A-A5DD-A885BC69FCDB}
