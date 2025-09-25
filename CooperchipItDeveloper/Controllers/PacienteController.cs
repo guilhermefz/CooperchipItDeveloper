@@ -3,6 +3,7 @@ using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
 using Cooperchip.ItDeveloper.Mvc.Models;
 using Cooperchip.ItDeveloper.Mvc.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 
 namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
+    [Authorize]
     public class PacienteController : Controller
     {
         private readonly PacienteService _pacienteService;

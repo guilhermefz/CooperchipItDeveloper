@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CooperchipItDeveloper.Mvc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+595c76958111aab952571eb5fd7a73a7f226f938")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ced1e259c4f6215dcc045710dd5d96696d06ca29")]
 [assembly: System.Reflection.AssemblyProductAttribute("CooperchipItDeveloper.Mvc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CooperchipItDeveloper.Mvc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

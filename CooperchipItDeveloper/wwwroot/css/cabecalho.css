@@ -12,8 +12,9 @@
 
 header {
     width: 100%;
-    background-color: rgb(88, 87, 87);
+    background-color: #2081C3;
 }
+
 
 .top-header > .interface {
     display: flex;
@@ -22,8 +23,8 @@ header {
 }
 
 .top-header {
-    background-color: #fff;
-    padding: 20px 4%;
+    background-color: #F7F9F9;
+    padding: 0px 2%;
 }
 
     .top-header .logotipo img {

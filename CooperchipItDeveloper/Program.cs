@@ -4,6 +4,9 @@ using AutoMapper;
 using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Mvc.Mappers;
 using Cooperchip.ItDeveloper.Mvc.Services;
+using CooperchipItDeveloper.Mvc.Data;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,6 +29,19 @@ namespace CooperchipItDeveloper
             builder.Services.AddAutoMapper(typeof(PacienteMapper));
 
             builder.Services.AddDbContext<ITDeveloperDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddDbContext<ApplicationDbContext>(
+                options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CooperchipItDeveloper.Mvc;Trusted_Connection=True;MultipleActiveResultSets=true"));
+
+            builder.Services.AddDefaultIdentity<IdentityUser>(options => {
+                options.SignIn.RequireConfirmedAccount = false;
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 6;
+            }).AddEntityFrameworkStores<ApplicationDbContext>();
+
             builder.Services.AddScoped<PacienteService>();
 
             var app = builder.Build();
@@ -42,12 +58,14 @@ namespace CooperchipItDeveloper
             
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             
+            app.MapRazorPages();
             app.UseNotyf();
 
             app.Run();

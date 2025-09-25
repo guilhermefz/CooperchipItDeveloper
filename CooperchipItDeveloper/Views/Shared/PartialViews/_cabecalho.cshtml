@@ -8,21 +8,36 @@
     <section class="top-header">
         <div class="interface">
             <div class="logotipo">
-                <a href="#">
+                <a asp-controller="Home" asp-action="Index">
                     <img src=~/img/cabecalho_medico_minimalista.png alt="logotipo médico" height="100px">
                 </a>
             </div>
 
             <div class="btn-social">
-                <a href="https://www.instagram.com/"><button><i class="bi bi-instagram" target="_blank"></i></button></a>
-                <a href="https://github.com/guilhermefz" target="_blank"><button><i class="bi bi-github"></i></button></a>
-                <a href="https://www.linkedin.com/in/guilhermefiuza/"><button><i class="bi bi-linkedin" target="_blank"></i></button></a>
+                <a href="https://chatgpt.com/" target="_blank"><button><i class="bi bi-openai"></i></button></a>
+                <a asp-controller="Home" asp-action="Privacy" target="_blank" title="Fazer Login"><button><i class="bi bi-person-bounding-box"></i></button></a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form asp-area="Identity" asp-page="/Account/Logout" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-link p-0" title="Sair (@User.Identity.Name)">
+                            <i class="bi bi-person-fill-check text-success fs-4"></i>
+                        </button>
+                    </form>
+                }
+                else
+                {
+                    <a href="/Identity/Account/Login" title="Fazer Login">
+                        <button class="btn btn-link p-0">
+                            <i class="bi bi-person-exclamation text-danger fs-4"></i>
+                        </button>
+                    </a>
+                }
             </div>
         </div>
     </section>
     <section class="bottom-header">
         <div class="interface">
-            <nav>
+            <nav class="nav-item">
                 <ul>
                     <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
                     <li><a asp-controller="Home" asp-action="Dashboard">DASHBOARD</a></li>

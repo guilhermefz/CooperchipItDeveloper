@@ -21,3 +21,11 @@ body {
   margin-bottom: 60px;
 }
 
+.containerPai{
+    padding: 0 80px;
+    margin: 0 80px;
+}
+
+.cabecalhoTable {
+    background-color: #2081C3;
+}
