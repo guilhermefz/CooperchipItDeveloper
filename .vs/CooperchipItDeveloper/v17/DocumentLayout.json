@@ -3,48 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\extensions\\taghelpers\\tablegridtaghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\extensions\\taghelpers\\tablegridtaghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\shared\\partialviews\\_cabecalho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\shared\\partialviews\\_cabecalho.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\wwwroot\\css\\cabecalho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\wwwroot\\css\\cabecalho.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\estadopaciente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\estadopaciente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\paciente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\paciente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\estadopaciente\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\estadopaciente\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper.Data\\Migrations\\20250924191320_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CooperchipItDeveloper.Data\\Migrations\\20250924191320_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\controllers\\estadopacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\controllers\\estadopacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\cooperchipitdeveloper.mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\cooperchipitdeveloper.mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\extensions\\taghelpers\\emailtaghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\extensions\\taghelpers\\emailtaghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,8 +35,12 @@
       "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\shared\\partialviews\\_menu_lateral.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|c:\\users\\guilherme.campos\\documents\\estudos\\cooperchipitdeveloper\\cooperchipitdeveloper\\views\\estadopaciente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D7802C6-A3F1-4717-B35A-EB70184745BD}|CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj|solutionrelative:cooperchipitdeveloper\\views\\estadopaciente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,8 +50,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 13,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CooperchipItDeveloper\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T12:05:11.559Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -98,184 +96,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CooperchipItDeveloper.Mvc",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj",
-              "RelativeToolTip": "CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-24T19:51:16.538Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "CooperchipItDeveloper\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T19:30:08.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EmailTagHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Extensions\\TagHelpers\\EmailTagHelper.cs",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Extensions\\TagHelpers\\EmailTagHelper.cs",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Extensions\\TagHelpers\\EmailTagHelper.cs",
-              "RelativeToolTip": "CooperchipItDeveloper\\Extensions\\TagHelpers\\EmailTagHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T19:20:14.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TableGridTagHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Extensions\\TagHelpers\\TableGridTagHelper.cs",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Extensions\\TagHelpers\\TableGridTagHelper.cs",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Extensions\\TagHelpers\\TableGridTagHelper.cs",
-              "RelativeToolTip": "CooperchipItDeveloper\\Extensions\\TagHelpers\\TableGridTagHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T19:20:01.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\EstadoPaciente\\Index.cshtml",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\EstadoPaciente\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\EstadoPaciente\\Index.cshtml",
-              "RelativeToolTip": "CooperchipItDeveloper\\Views\\EstadoPaciente\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T19:16:28.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EstadoPacienteController.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Controllers\\EstadoPacienteController.cs",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Controllers\\EstadoPacienteController.cs",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Controllers\\EstadoPacienteController.cs",
-              "RelativeToolTip": "CooperchipItDeveloper\\Controllers\\EstadoPacienteController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T19:14:16.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20250924191320_inicial.cs",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper.Data\\Migrations\\20250924191320_inicial.cs",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper.Data\\Migrations\\20250924191320_inicial.cs",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper.Data\\Migrations\\20250924191320_inicial.cs",
-              "RelativeToolTip": "CooperchipItDeveloper.Data\\Migrations\\20250924191320_inicial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T19:13:20.728Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\EstadoPaciente\\Create.cshtml",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\EstadoPaciente\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\EstadoPaciente\\Create.cshtml",
-              "RelativeToolTip": "CooperchipItDeveloper\\Views\\EstadoPaciente\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T19:10:41.733Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "_menu_lateral.cshtml",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_menu_lateral.cshtml",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_menu_lateral.cshtml",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_menu_lateral.cshtml",
-              "RelativeToolTip": "CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_menu_lateral.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T18:50:56.812Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "CooperchipItDeveloper\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T18:32:01.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "CooperchipItDeveloper\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Title": "cabecalho.css",
+              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\wwwroot\\css\\cabecalho.css",
+              "RelativeDocumentMoniker": "CooperchipItDeveloper\\wwwroot\\css\\cabecalho.css",
+              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\wwwroot\\css\\cabecalho.css",
+              "RelativeToolTip": "CooperchipItDeveloper\\wwwroot\\css\\cabecalho.css",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAFIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-24T17:11:31.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "CooperchipItDeveloper\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T17:05:08.683Z",
+              "WhenOpened": "2025-09-25T14:47:07.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "CooperchipItDeveloper\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAB1AAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CooperchipItDeveloper\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-24T16:53:47.118Z",
+              "WhenOpened": "2025-09-25T14:27:32.45Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Program.cs",
               "RelativeDocumentMoniker": "CooperchipItDeveloper\\Program.cs",
               "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Program.cs",
               "RelativeToolTip": "CooperchipItDeveloper\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T14:40:01.12Z",
+              "WhenOpened": "2025-09-25T14:26:38.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Paciente\\Index.cshtml",
+              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\Paciente\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Paciente\\Index.cshtml",
+              "RelativeToolTip": "CooperchipItDeveloper\\Views\\Paciente\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T14:23:50.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\EstadoPaciente\\Index.cshtml",
+              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\EstadoPaciente\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\EstadoPaciente\\Index.cshtml",
+              "RelativeToolTip": "CooperchipItDeveloper\\Views\\EstadoPaciente\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T14:20:47.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_cabecalho.cshtml",
+              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_cabecalho.cshtml",
+              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_cabecalho.cshtml",
+              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_cabecalho.cshtml",
+              "RelativeToolTip": "CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_cabecalho.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T14:12:35.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "CooperchipItDeveloper\\Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAuwFsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T14:11:12.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CooperchipItDeveloper\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAASwBIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T14:08:37.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_menu_lateral.cshtml",
+              "DocumentMoniker": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_menu_lateral.cshtml",
+              "RelativeDocumentMoniker": "CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_menu_lateral.cshtml",
+              "ToolTip": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_menu_lateral.cshtml",
+              "RelativeToolTip": "CooperchipItDeveloper\\Views\\Shared\\PartialViews\\_menu_lateral.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-25T14:07:38.274Z",
               "EditorCaption": ""
             }
           ]

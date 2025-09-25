@@ -314,6 +314,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AspNetCoreHero.ToastNotification": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "AutoMapper": {
               "target": "Package",
               "version": "[14.0.0, )"
@@ -357,6 +361,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.20, )"
+            },
+            "NToastNotify": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [

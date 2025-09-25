@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="page-content">
-    @await Html.PartialAsync("PartialViews/_menu_lateral")
+    <partial name="PartialViews/_cabecalho" />
+    @* @await Html.PartialAsync("PartialViews/_menu_lateral") *@
         <div class="container">
             <main role="main" class="pb-3">
                 @RenderBody()
@@ -25,12 +26,13 @@
         </div>
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2025 - CooperchipItDeveloper - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <partial name="PartialViews/_footer"/>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    @await Component.InvokeAsync("Notyf")
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

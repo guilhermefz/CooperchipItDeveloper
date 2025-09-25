@@ -1,0 +1,45 @@
+﻿<link rel="stylesheet" href="~/css/cabecalho.css" />
+
+@{
+    ViewData["Title"] = "Cabeçalho";
+}
+
+<header>
+    <section class="top-header">
+        <div class="interface">
+            <div class="logotipo">
+                <a href="#">
+                    <img src=~/img/cabecalho_medico_minimalista.png alt="logotipo médico" height="100px">
+                </a>
+            </div>
+
+            <div class="btn-social">
+                <a href="https://www.instagram.com/"><button><i class="bi bi-instagram" target="_blank"></i></button></a>
+                <a href="https://github.com/guilhermefz" target="_blank"><button><i class="bi bi-github"></i></button></a>
+                <a href="https://www.linkedin.com/in/guilhermefiuza/"><button><i class="bi bi-linkedin" target="_blank"></i></button></a>
+            </div>
+        </div>
+    </section>
+    <section class="bottom-header">
+        <div class="interface">
+            <nav>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                    <li><a asp-controller="Home" asp-action="Dashboard">DASHBOARD</a></li>
+                    <li class="drop-hover">
+                        <a href="#">PACIENTES<i class="bi bi-caret-down-fill"></i></a>
+                        <div class="drop">
+                            <a asp-controller="Paciente" asp-action="Index">LISTAGEM</a>
+                            <a asp-controller="EstadoPaciente" asp-action="Index">ESTADO</a>
+                            <a asp-controller="EstadoPaciente" asp-action="Index">LEITOS</a>
+                            <a asp-controller="EstadoPaciente" asp-action="Index">CONSULTAS</a>
+                        </div>
+                    </li>
+                    <li><a href="#">AGENDAMENTOS</a></li>
+                    <li><a href="#">CONTATOS</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </section>
+</header>

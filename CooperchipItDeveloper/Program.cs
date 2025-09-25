@@ -1,3 +1,5 @@
+using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Extensions;
 using AutoMapper;
 using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Mvc.Mappers;
@@ -12,6 +14,13 @@ namespace CooperchipItDeveloper
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddNotyf(config => {
+                config.DurationInSeconds = 3;
+                config.IsDismissable = true;
+                config.Position = NotyfPosition.TopCenter;
+                config.HasRippleEffect = false;
+            });
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddAutoMapper(typeof(PacienteMapper));
@@ -30,7 +39,7 @@ namespace CooperchipItDeveloper
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();
@@ -38,6 +47,8 @@ namespace CooperchipItDeveloper
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+            
+            app.UseNotyf();
 
             app.Run();
         }

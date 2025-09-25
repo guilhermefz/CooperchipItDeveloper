@@ -7,7 +7,7 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-@await Component.InvokeAsync("Cabecalho", new { Titulo = "Gestão de Pacientes", Subtitulo = "Controle geral do cadastro de Pacientes" })
+@* @await Component.InvokeAsync("Cabecalho", new { Titulo = "Gestão de Pacientes", Subtitulo = "Controle geral do cadastro de Pacientes" }) *@
 
 <div class="panel panel-info panel-controls">
     <div class="panel panel-heading">
@@ -16,7 +16,7 @@
 </div>
 
 <p >
-    <a asp-action="Create" class="btn btn-success">Criar Novo</a>
+    <a asp-action="Create" class="btn btn-outline-dark">Criar Novo</a>
 </p>
 
 <table class="table table-striped table-hover table-bordered">
@@ -39,7 +39,7 @@
                 <td>@Html.DisplayFor(modelItem => item.DataNascimento)</td>
                 <td>@Html.DisplayFor(modelItem => item.Email)</td>
                 <td>@Html.DisplayFor(modelItem => item.Cpf)</td>
-                <td>@Html.DisplayFor(modelItem => item.EstadoPaciente.Descricao)</td>
+                <td>@Html.DisplayFor(modelItem => item.EstadoPaciente!.Descricao)</td>
                 <td>@Html.DisplayFor(modelItem => item.Sexo)</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pen"></i></a>

@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
 using Cooperchip.ItDeveloper.Mvc.Models;
 using Cooperchip.ItDeveloper.Mvc.Services;
@@ -13,11 +14,13 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
     {
         private readonly PacienteService _pacienteService;
         private readonly IMapper _mapper;
+        private readonly INotyfService _notyf;
 
-        public PacienteController(PacienteService pacienteService, IMapper mapper)
+        public PacienteController(PacienteService pacienteService, IMapper mapper, INotyfService notyf )
         {
             _pacienteService = pacienteService;
             _mapper = mapper;
+            _notyf = notyf;
         }
 
         [HttpGet]
@@ -69,7 +72,18 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                     return View(model);
                 }
             }
-            ViewBag.EstadoPaciente = new SelectList(await _pacienteService.ListarEstadoPaciente(), "Id", "Descricao");
+            model = new PacienteViewModel
+            {
+                EstadosPaciente = (await _pacienteService.ListarEstadoPaciente())
+                          .Select(e => new SelectListItem
+                          {
+                              Value = e.Id.ToString(),
+                              Text = e.Descricao
+                          })
+                          .ToList()
+            };
+            _notyf.Error("Ocorreu um erro ao salvar, verifique se os campos foram escritos corretamente!");
+            //ViewBag.EstadoPaciente = new SelectList(await _pacienteService.ListarEstadoPaciente(), "Id", "Descricao");
             return View(model);
         }
 

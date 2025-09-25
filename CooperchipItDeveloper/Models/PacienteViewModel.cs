@@ -11,16 +11,24 @@ namespace Cooperchip.ItDeveloper.Mvc.Models
         [Key]
         [DisplayName("Id do Paciente")]
         public Guid Id { get; set; }
+
         [DisplayName("Estado do paciente")]
         public Guid? EstadoPacienteId { get; set; }
+
         public IEnumerable<SelectListItem>? EstadosPaciente { get; set; }
+
         public virtual EstadoPaciente? EstadoPaciente { get; set; }
+
         [DisplayName(displayName: "Nome do Paciente")]
+        [Required]
         [StringLength(maximumLength: 80, ErrorMessage = "O campo {0} deve ter entre {2} e {1} caracteres.", MinimumLength = 2)]
         public string? Nome { get; set; }
+
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date, ErrorMessage = "o campo {0} está inválido")]
+        [Required]
         public DateTime DataNascimento { get; set; }
+
         [Display(Name = "Data de Internação")]
         [DataType(DataType.DateTime, ErrorMessage = "o campo {0} está inválido")]
         public DateTime DataInternacao { get; set; }
@@ -34,7 +42,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Models
         //[DisplayName(displayName: "Usuário Última Modificação")]
         //public string UsuarioUltimaModificação { get; set; }    
 
-
+        
         [DisplayName("Email")]
         [DataType(DataType.EmailAddress, ErrorMessage = "Email Inválido")]
         public string? Email { get; set; }
