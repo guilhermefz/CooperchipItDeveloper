@@ -80,5 +80,18 @@ namespace Cooperchip.ItDeveloper.Mvc.Services
             _context.Remove(paciente);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<int> ContarPacientesPorEstado(string descricaoEstado)
+        {
+            var estado = await _context.EstadoPaciente
+                .FirstOrDefaultAsync(e => e.Descricao == descricaoEstado);
+            if (estado == null)
+            {
+                return 0;
+            }
+            return await _context.Paciente
+                .Where(p => p.EstadoPacienteId == estado.Id)
+                .CountAsync();
+        }
     }
 }
