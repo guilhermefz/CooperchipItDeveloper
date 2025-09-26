@@ -14,8 +14,8 @@
             </div>
 
             <div class="btn-social">
-                <a href="https://chatgpt.com/" target="_blank"><button><i class="bi bi-openai"></i></button></a>
-                <a asp-controller="Home" asp-action="Privacy" target="_blank" title="Fazer Login"><button><i class="bi bi-person-bounding-box"></i></button></a>
+                <a href="https://chatgpt.com/" target="_blank" title="ChatGPT"><button><i class="bi bi-openai"></i></button></a>
+                <a asp-controller="Home" asp-action="Privacy" target="_blank" title="Configurações"><button><i class="bi bi-gear"></i></button></a>
                 @if (User.Identity.IsAuthenticated)
                 {
                     <form asp-area="Identity" asp-page="/Account/Logout" method="post" style="display: inline;">

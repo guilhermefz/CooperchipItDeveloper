@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="page-content">
-
-    <header>
-        <partial name="PartialViews/_cabecalho" />
-    </header>
+    <div>
+        <header>
+            <partial name="PartialViews/_cabecalho" />
+        </header>
 
         <div class="containerPai">
             <main role="main" class="pb-3">
@@ -28,11 +28,12 @@
             </main>
         </div>
 
-    <footer class="border-top footer text-muted mt-auto">
-        <div class="container">
-            <partial name="PartialViews/_footer"/>
-        </div>
-    </footer>
+        <footer class="border-top footer text-muted flex-shrink-0">
+            <div class="container">
+                <partial name="PartialViews/_footer" />
+            </div>
+        </footer>
+    </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

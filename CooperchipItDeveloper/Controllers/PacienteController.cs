@@ -107,7 +107,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             {
                 list.Add (_mapper.Map<PacienteViewModel>(item));
             }
-            return View(list);
+            return View(list);    
         }
 
         [HttpGet]

@@ -84,7 +84,10 @@ header {
         height: 250px;
     }
 
+.logotipo:hover {
+    transform: scale(1.05);
+}
 
-.bi-github:hover {
-    cursor: pointer;
+.btn-social button:hover {
+    transform: scale(1.05);
 }

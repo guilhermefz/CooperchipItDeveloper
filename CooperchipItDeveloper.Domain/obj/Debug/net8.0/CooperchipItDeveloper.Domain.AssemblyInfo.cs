@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CooperchipItDeveloper.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ced1e259c4f6215dcc045710dd5d96696d06ca29")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a571bfdc37371c71953d7bb41ef5ee33a42715d")]
 [assembly: System.Reflection.AssemblyProductAttribute("CooperchipItDeveloper.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CooperchipItDeveloper.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

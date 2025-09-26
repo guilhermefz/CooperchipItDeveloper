@@ -29,3 +29,14 @@ body {
 .cabecalhoTable {
     background-color: #2081C3;
 }
+
+.btn-primary {
+    background-color: #2081C3 !important;
+    border-color: #2081C3 !important;
+}
+
+    .btn-primary:hover {
+        background-color: #18689a !important;
+        border-color: #18689a !important;
+        transform: scale(1.05);
+    }
