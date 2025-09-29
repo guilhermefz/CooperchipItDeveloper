@@ -40,3 +40,17 @@ body {
         border-color: #18689a !important;
         transform: scale(1.05);
     }
+
+.bg-red{
+    background-color: #F4B9B2;
+}
+
+.bg-yellow{
+    background-color: #FED99B
+}
+.bg-blue{
+    background-color: #D6EFFF
+}
+.bg-write{
+    background-color: #FEFEFF
+}

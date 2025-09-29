@@ -5,6 +5,7 @@ using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Mvc.Mappers;
 using Cooperchip.ItDeveloper.Mvc.Services;
 using CooperchipItDeveloper.Mvc.Data;
+using CooperchipItDeveloper.Mvc.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -43,6 +44,7 @@ namespace CooperchipItDeveloper
             }).AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddScoped<PacienteService>();
+            builder.Services.AddScoped<EstadoPacienteService>();
 
             var app = builder.Build();
 
