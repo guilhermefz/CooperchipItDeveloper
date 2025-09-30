@@ -10,7 +10,7 @@
                 <div class="h4 mb-0">@Model.Quantidade</div>
             </div>
             <div class="text-end">
-                <div class="icon-circle"><i class="bi bi-person-fill-exclamation fs-4 text-primary"></i></div>
+                <div class="icon-circle"> <i class="@Model.IconeLg"></i> </div>
             </div>
         </div>
         <div class="mt-3">
@@ -19,6 +19,9 @@
         </div>
         <div class="progress" aria-valuenow="@(Math.Round(Model.Percentual))" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: @(Math.Round(Model.Percentual))%"></div>
+        </div>
+        <div class="comparison">
+            <p class="mb0"><i class="bi bi-boxes"></i> @Model.Percentual.ToString("F2") % sobre o valor total</p>
         </div>
     </div>
 </div> 

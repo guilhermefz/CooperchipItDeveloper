@@ -6,33 +6,35 @@
 
 <header>
     <section class="top-header">
-        <div class="interface">
-            <div class="logotipo">
-                <a asp-controller="Home" asp-action="Index">
-                    <img src=~/img/cabecalho_medico_minimalista.png alt="logotipo médico" height="100px">
-                </a>
-            </div>
-
-            <div class="btn-social">
-                <a href="https://chatgpt.com/" target="_blank" title="ChatGPT"><button><i class="bi bi-openai"></i></button></a>
-                <a asp-controller="Home" asp-action="Privacy" target="_blank" title="Configurações"><button><i class="bi bi-gear"></i></button></a>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <form asp-area="Identity" asp-page="/Account/Logout" method="post" style="display: inline;">
-                        <button type="submit" class="btn btn-link p-0" title="Sair (@User.Identity.Name)">
-                            <i class="bi bi-person-fill-check text-success fs-4"></i>
-                        </button>
-                    </form>
-                }
-                else
-                {
-                    <a href="/Identity/Account/Login" title="Fazer Login">
-                        <button class="btn btn-link p-0">
-                            <i class="bi bi-person-exclamation text-danger fs-4"></i>
-                        </button>
+            <div class="interface">
+                <div class="logotipo">
+                    <a asp-controller="Home" asp-action="Index">
+                        <img src=~/img/cabecalho_medico_minimalista.png alt="logotipo médico" height="100px">
                     </a>
-                }
-            </div>
+                </div>
+
+            <div class="btn-social d-flex align-items-center gap-2">
+                    <form asp-area="Identity" asp-page="/Account/Manage/Index" method="post" title="Ver perfil"><button><i class="bi bi-person-circle"></i></button></form>
+                    <a asp-controller="Home" asp-action="Privacy" target="_blank" title="Configurações"><button><i class="bi bi-gear"></i></button></a>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <form asp-area="Identity" asp-page="/Account/Logout" method="post" style="display: inline;" onsubmit="return confirm('Tem certeza que desejar deslogar deste usuario?')">
+                            <button type="submit" class="btn btn-link p-0" title="Sair (@User.Identity.Name)">
+                                <i class="bi bi-person-fill-check text-success fs-4"></i>
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a href="/Identity/Account/Login" title="Fazer Login">
+                            <button class="btn btn-link p-0">
+                                <i class="bi bi-person-exclamation text-danger fs-4"></i>
+                            </button>
+                        </a>
+                    }
+
+                </div>
         </div>
     </section>
     <section class="bottom-header">

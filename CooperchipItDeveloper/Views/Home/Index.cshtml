@@ -1,7 +1,7 @@
-﻿<h1>Seja bem vindo a tela inicial</h1>
-<div class="flex-row d-flex gap-3 justify-content-between">
-    @await Component.InvokeAsync("StatusPaciente", new { estado = "Grave" })
-    @await Component.InvokeAsync("StatusPaciente", new { estado = "Em Observação" })
+﻿<h1 class="text-center">Seja bem vindo a tela inicial</h1>
+<div class="flex-row d-flex gap-3 justify-content-between m-sm-4" style="position: relative; z-index: -1;">
+    <vc:status-paciente estado="Grave"></vc:status-paciente>
+    <vc:status-paciente estado="Em Observação"></vc:status-paciente>
     <vc:status-paciente estado="Crítico"></vc:status-paciente>
     <vc:status-paciente estado="Estável"></vc:status-paciente>
 </div>
