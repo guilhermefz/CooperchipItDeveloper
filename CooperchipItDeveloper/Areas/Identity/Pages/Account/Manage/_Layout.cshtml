@@ -9,17 +9,13 @@
     }
 }
 
-<h1>Manage your account</h1>
-
-<div>
-    <h2>Change your account settings</h2>
-    <hr />
+<div class="container mt-4 " style=" position:relative; z-index: 0;">
     <div class="row">
-        <div class="col-md-3">
-            <partial name="_ManageNav" />
-        </div>
         <div class="col-md-9">
             @RenderBody()
+        </div>
+        <div class="col-md-3 mt-5">
+            <partial name="_ManageNav" />
         </div>
     </div>
 </div>
