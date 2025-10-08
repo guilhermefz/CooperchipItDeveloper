@@ -3,6 +3,7 @@
 #nullable disable
 
 using AspNetCoreHero.ToastNotification.Abstractions;
+using CooperchipItDeveloper.Mvc.Extensions;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -17,18 +18,18 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly IUserStore<IdentityUser> _userStore;
-        private readonly IUserEmailStore<IdentityUser> _emailStore;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IUserStore<ApplicationUser> _userStore;
+        private readonly IUserEmailStore<ApplicationUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly INotyfService _notyf;
 
         public RegisterModel(
-            UserManager<IdentityUser> userManager,
-            IUserStore<IdentityUser> userStore,
-            SignInManager<IdentityUser> signInManager,
+            UserManager<ApplicationUser> userManager,
+            IUserStore<ApplicationUser> userStore,
+            SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
             INotyfService notyf)
@@ -66,6 +67,25 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
             [Display(Name = "Confirmar senha")]
             [Compare("Password", ErrorMessage = "As duas senhas não são idênticas.")]
             public string ConfirmPassword { get; set; }
+
+
+
+            [PersonalData]
+            [Required(ErrorMessage = "O campo {0} é obrigatório!")]
+            [StringLength(maximumLength: 35, ErrorMessage = "O campo {0} deve ter entre {2} e {1} caracteres", MinimumLength = 2)]
+            public string Apelido { get; set; }
+
+            [PersonalData]
+            [Required(ErrorMessage = "O campo {0} é obrigatório!")]
+            [StringLength(maximumLength: 35, ErrorMessage = "O campo {0} deve ter entre {2} e {1} caracteres", MinimumLength = 2)]
+            [Display(Name = "Nome Completo")]
+            public string NomeCompleto { get; set; }
+
+            [PersonalData]
+            [Required(ErrorMessage = "O campo {0} é obrigatório!")]
+            [Display(Name = "Data de Nascimento")]
+            public DateTime DataNascimento { get; set; }
+
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -82,16 +102,22 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
+
+                user.NomeCompleto = Input.NomeCompleto;
+                user.Apelido = Input.Apelido;
+                user.DataNascimento = Input.DataNascimento;
+
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-                var result = await _userManager.CreateAsync(user, Input.Password);
+                user.Apelido = Input.Apelido;
+                var result = await _userManager.CreateAsync((ApplicationUser)user, Input.Password);
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("Uma nova conta de usuario foi criada.");
 
-                    var userId = await _userManager.GetUserIdAsync(user);
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    var userId = await _userManager.GetUserIdAsync((ApplicationUser)user);
+                    var code = await _userManager.GenerateEmailConfirmationTokenAsync((ApplicationUser)user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
@@ -108,7 +134,7 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        await _signInManager.SignInAsync((ApplicationUser)user, isPersistent: false);
                         return RedirectToAction("Index", "Home");
                     }
                 }
@@ -122,27 +148,27 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
             return Page();
         }
 
-        private IdentityUser CreateUser()
+        private ApplicationUser CreateUser()
         {
             try
             {
-                return Activator.CreateInstance<IdentityUser>();
+                return Activator.CreateInstance<ApplicationUser>();
             }
             catch
             {
-                throw new InvalidOperationException($"Can't create an instance of '{nameof(IdentityUser)}'. " +
-                    $"Ensure that '{nameof(IdentityUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
+                throw new InvalidOperationException($"Can't create an instance of '{nameof(ApplicationUser)}'. " +
+                    $"Ensure that '{nameof(ApplicationUser)}' is not an abstract class and has a parameterless constructor, or alternatively " +
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
 
-        private IUserEmailStore<IdentityUser> GetEmailStore()
+        private IUserEmailStore<ApplicationUser> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)
             {
                 throw new NotSupportedException("The default UI requires a user store with email support.");
             }
-            return (IUserEmailStore<IdentityUser>)_userStore;
+            return (IUserEmailStore<ApplicationUser>)_userStore;
         }
     }
 }

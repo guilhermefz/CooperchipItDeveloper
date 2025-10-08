@@ -27,6 +27,25 @@
                 <label asp-for="Input.ConfirmPassword">Confirmar sua senha</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Apelido" class="form-control" autocomplete="apelido" aria-required="true" placeholder="escreva seu apelido" />
+                <label asp-for="Input.Apelido">Apelido</label>
+                <span asp-validation-for="Input.Apelido" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.NomeCompleto" class="form-control" autocomplete="Nome Completo" aria-required="true" placeholder="escreva seu nome completo" />
+                <label asp-for="Input.NomeCompleto">Nome completo</label>
+                <span asp-validation-for="Input.NomeCompleto" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input asp-for="Input.DataNascimento" class="form-control" autocomplete="nascimento" aria-required="true" placeholder="escreva a data do seu nascimento" />
+                <label asp-for="Input.DataNascimento">Data de Nascimento</label>
+                <span asp-validation-for="Input.DataNascimento" class="text-danger"></span>
+            </div>
+
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Registrar</button>
         </form>
     </div>

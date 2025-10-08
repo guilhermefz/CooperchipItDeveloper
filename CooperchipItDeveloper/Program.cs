@@ -5,6 +5,7 @@ using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Mvc.Mappers;
 using Cooperchip.ItDeveloper.Mvc.Services;
 using CooperchipItDeveloper.Mvc.Data;
+using CooperchipItDeveloper.Mvc.Extensions;
 using CooperchipItDeveloper.Mvc.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -34,7 +35,7 @@ namespace CooperchipItDeveloper
             builder.Services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CooperchipItDeveloper.Mvc;Trusted_Connection=True;MultipleActiveResultSets=true"));
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => {
+            builder.Services.AddDefaultIdentity<ApplicationUser>(options => {
                 options.SignIn.RequireConfirmedAccount = false;
                 options.Password.RequireDigit = true;
                 options.Password.RequireLowercase = true;

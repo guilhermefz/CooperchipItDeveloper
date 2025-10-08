@@ -16,17 +16,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using AspNetCoreHero.ToastNotification.Abstractions;
 using System.ComponentModel;
+using CooperchipItDeveloper.Mvc.Extensions;
 
 namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
 {
     public class LoginModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
         private readonly INotyfService _notyf;
 
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger, INotyfService notfy)
+        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger<LoginModel> logger, INotyfService notfy)
         {
             _signInManager = signInManager;
             _logger = logger;
