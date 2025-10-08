@@ -2,14 +2,12 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
 using CooperchipItDeveloper.Mvc.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
 {
@@ -18,47 +16,37 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public IndexModel(
-            UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+        public IndexModel( UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
         }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         public string Username { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         [TempData]
         public string StatusMessage { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         [BindProperty]
         public InputModel Input { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         public class InputModel
         {
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
             [Phone]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Required]
+            [Display(Name = "Nome Completo")]
+            public string NomeCompleto { get; set; }
+
+            [Display(Name = "Apelido")]
+            public string Apelido {  get; set; }
+
+            [DataType(DataType.Date)]
+            [DisplayName("Data de Nascimento")]
+            public DateTime DataNascimento { get; set; }
+
         }
 
         private async Task LoadAsync(ApplicationUser user)
@@ -66,11 +54,18 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
 
+            var nomeCompleto = user.NomeCompleto;
+            var apelido = user.Apelido;
+            var dataNascimento = user.DataNascimento;
+
             Username = userName;
 
             Input = new InputModel
             {
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+                NomeCompleto = nomeCompleto,
+                Apelido = apelido,
+                DataNascimento = dataNascimento
             };
         }
 
@@ -107,6 +102,35 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
                 if (!setPhoneResult.Succeeded)
                 {
                     StatusMessage = "Unexpected error when trying to set phone number.";
+                    return RedirectToPage();
+                }
+            }
+
+            bool profileUpdated = false;
+            if (Input.Apelido != user.NomeCompleto)
+            {
+                user.NomeCompleto = Input.NomeCompleto;
+                profileUpdated = true;
+            }
+
+            if(Input.Apelido != user.Apelido)
+            {
+                user.Apelido = Input.Apelido;
+                profileUpdated = true;
+            }
+
+            if (Input.DataNascimento != user.DataNascimento) 
+            {
+                user.DataNascimento = Input.DataNascimento;
+                profileUpdated = true;
+            }
+
+            if (profileUpdated)
+            {
+                var updateResult = await _userManager.UpdateAsync(user);
+                if(!updateResult.Succeeded)
+                {
+                    StatusMessage = "Erro inesperado na tentativa de atualizar o perfil.";
                     return RedirectToPage();
                 }
             }
