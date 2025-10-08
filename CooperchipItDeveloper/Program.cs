@@ -6,6 +6,7 @@ using Cooperchip.ItDeveloper.Mvc.Mappers;
 using Cooperchip.ItDeveloper.Mvc.Services;
 using CooperchipItDeveloper.Mvc.Data;
 using CooperchipItDeveloper.Mvc.Extensions;
+using CooperchipItDeveloper.Mvc.Security.Services;
 using CooperchipItDeveloper.Mvc.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
@@ -16,7 +17,7 @@ namespace CooperchipItDeveloper
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -30,10 +31,11 @@ namespace CooperchipItDeveloper
             builder.Services.AddControllersWithViews();
             builder.Services.AddAutoMapper(typeof(PacienteMapper));
 
-            builder.Services.AddDbContext<ITDeveloperDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDbContext<ITDeveloperDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            builder.Services.AddDbContext<ApplicationDbContext>(
-                options => options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CooperchipItDeveloper.Mvc;Trusted_Connection=True;MultipleActiveResultSets=true"));
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CooperchipItDeveloper.Mvc;Trusted_Connection=True;MultipleActiveResultSets=true"));
 
             builder.Services.AddDefaultIdentity<ApplicationUser>(options => {
                 options.SignIn.RequireConfirmedAccount = false;
@@ -42,7 +44,9 @@ namespace CooperchipItDeveloper
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 6;
-            }).AddEntityFrameworkStores<ApplicationDbContext>();
+            })
+            .AddRoles<IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddScoped<PacienteService>();
             builder.Services.AddScoped<EstadoPacienteService>();
@@ -52,13 +56,12 @@ namespace CooperchipItDeveloper
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            
+
             app.UseRouting();
 
             app.UseAuthentication();
@@ -67,13 +70,21 @@ namespace CooperchipItDeveloper
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-            
+
             app.MapRazorPages();
             app.UseNotyf();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<ApplicationDbContext>();
+                var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+                var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+                await DefaultUsersAndRoles.Seed(context, userManager, roleManager);
+            }
 
             app.Run();
         }
     }
 }
-
-
