@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UEWT7LBW0gY=",
+  "dgSpecHash": "mGk1wMvUN1c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj",
+  "projectFilePath": "C:\\Users\\Guilherme.Campos\\Documents\\Cooperchip\\CooperchipItDeveloper\\CooperchipItDeveloper.Mvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Guilherme.Campos\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\Guilherme.Campos\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",

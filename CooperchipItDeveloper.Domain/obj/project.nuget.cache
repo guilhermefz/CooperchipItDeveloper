@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O6utAJbzmts=",
+  "dgSpecHash": "z7rKqQgiGUA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Guilherme.Campos\\Documents\\Estudos\\CooperchipItDeveloper\\CooperchipItDeveloper.Domain\\CooperchipItDeveloper.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Guilherme.Campos\\Documents\\Cooperchip\\CooperchipItDeveloper.Domain\\CooperchipItDeveloper.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Guilherme.Campos\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\Guilherme.Campos\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
