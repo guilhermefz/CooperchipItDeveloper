@@ -4,6 +4,7 @@ using CooperchipItDeveloper.Mvc.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CooperchipItDeveloper.Mvc.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251009184851_AddNewUserAndRole")]
+    partial class AddNewUserAndRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,17 +108,17 @@ namespace CooperchipItDeveloper.Mvc.Migrations
                             Id = "38D1B050-7F27-4563-903A-277E480B5580",
                             AccessFailedCount = 0,
                             Apelido = "Poatan",
-                            ConcurrencyStamp = "ab396468-a50b-44e0-84aa-2f2be69e8f66",
-                            DataNascimento = new DateTime(2025, 10, 9, 15, 57, 41, 981, DateTimeKind.Local).AddTicks(3824),
+                            ConcurrencyStamp = "7ce39772-7007-4335-8be3-944a9d63d583",
+                            DataNascimento = new DateTime(2025, 10, 9, 15, 48, 49, 738, DateTimeKind.Local).AddTicks(6118),
                             Email = "poatan@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NomeCompleto = "Alex Pereira",
                             NormalizedEmail = "POATAN@GMAIL.COM",
                             NormalizedUserName = "POATAN@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEM3r6t9GKTyjy1FSuFKOh6xPMXAUi6cPMHgFpQ+NkBgv7o5ZzxxaeH2V3iHoXSyT0g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPYNJB2WBI32Tn7BB/kBUjSF8tHQd5dJ9xxIz/hJX3L8Xxd/0p4/VA8iCfQc7GKyzg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b215f358-1aeb-45da-947c-06470b3451a6",
+                            SecurityStamp = "08ca4671-646d-42f5-80df-503ead355f11",
                             TwoFactorEnabled = false,
                             UserName = "poatan@gmail.com"
                         });
@@ -151,7 +154,7 @@ namespace CooperchipItDeveloper.Mvc.Migrations
                         new
                         {
                             Id = " F58EB8E9 - 4BD4 - 4398 - A7BC - F76F9CB0F1E0 ",
-                            Name = "Convidado",
+                            Name = " F58EB8E9 - 4BD4 - 4398 - A7BC - F76F9CB0F1E0 ",
                             NormalizedName = " F58EB8E9 - 4BD4 - 4398 - A7BC - F76F9CB0F1E0 "
                         });
                 });

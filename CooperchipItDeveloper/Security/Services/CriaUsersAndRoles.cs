@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CooperchipItDeveloper.Mvc.Security.Services
 {
-    public static class DefaultUsersAndRoles
+    public static class CriaUsersAndRoles
     {
         public static async Task Seed(ApplicationDbContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleMenager)
         {

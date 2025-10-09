@@ -3,12 +3,15 @@ using AspNetCoreHero.ToastNotification.Extensions;
 using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Mvc.Mappers;
 using Cooperchip.ItDeveloper.Mvc.Services;
+using CooperchipItDeveloper.Mvc.Configuration;
 using CooperchipItDeveloper.Mvc.Data;
 using CooperchipItDeveloper.Mvc.Extensions;
+using CooperchipItDeveloper.Mvc.Extensions.Middlewares;
 using CooperchipItDeveloper.Mvc.Security.Services;
 using CooperchipItDeveloper.Mvc.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 namespace CooperchipItDeveloper
 {
@@ -34,6 +37,8 @@ namespace CooperchipItDeveloper
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CooperchipItDeveloper.Mvc;Trusted_Connection=True;MultipleActiveResultSets=true"));
 
+            builder.Services.AddIddentityConfig(builder.Configuration);
+
             builder.Services.AddDefaultIdentity<ApplicationUser>(options => {
                 // User
                 options.User.RequireUniqueEmail = true;
@@ -41,13 +46,13 @@ namespace CooperchipItDeveloper
                     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
 
                 // Lockout
-                options.Lockout.AllowedForNewUsers = true;
-                options.Lockout.MaxFailedAccessAttempts = 4;
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(4);
+                options.Lockout.MaxFailedAccessAttempts = 4;
+                options.Lockout.AllowedForNewUsers = true;
 
                 // SignIn
                 options.SignIn.RequireConfirmedPhoneNumber = false;
-                options.SignIn.RequireConfirmedAccount = false;
+                options.SignIn.RequireConfirmedAccount = true;
                 options.SignIn.RequireConfirmedEmail = false;
 
                 // Password
@@ -74,6 +79,7 @@ namespace CooperchipItDeveloper
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
 
             app.UseRouting();
 
@@ -94,8 +100,11 @@ namespace CooperchipItDeveloper
                 var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
-                await DefaultUsersAndRoles.Seed(context, userManager, roleManager);
+               //await CriaUsersAndRoles.Seed(context, userManager, roleManager);
             }
+            
+            
+
 
             app.Run();
         }

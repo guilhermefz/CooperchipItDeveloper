@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Admim")]
     public class PacienteController : Controller
     {
         private readonly PacienteService _pacienteService;
