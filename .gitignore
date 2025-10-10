@@ -1,2 +1,37 @@
 .vs/
 
+# Arquivos de build
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+
+# Arquivos de pacotes
+*.nupkg
+*.suo
+*.user
+*.useros
+*.userprefs
+node_modules/
+
+# Arquivos de soluções e projetos
+*.sln.docstates
+*.vshost.exe
+*.vshost.exe.config
+*.webinfo
+*.csproj.user
+
+# Configurações de ambiente
+appsettings.Development.json
+appsettings.local.json
+
+# Logs e dados
+*.log
+*.sqlite
+/Data/*.db
+
+# Diretórios e arquivos temporários
+[Tt]emp/
+[Tt]mp/
+.DS_Store
+
