@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CooperchipItDeveloper.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace CooperchipItDeveloper.Mvc.Extensions.ExtensionsMethods
 {
@@ -49,6 +51,40 @@ namespace CooperchipItDeveloper.Mvc.Extensions.ExtensionsMethods
                     RoleId = ROLEID,
                     UserId = USERID,
                 });
+
+            return builder;
+        }
+
+
+
+        public static ModelBuilder AddGenericos(this ModelBuilder builder)
+        {
+            var k = 0;
+            string line;
+            var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var csvPath = Path.Combine(outPutDirectory!, "Csv\\Generico.csv");
+            string filePath = new Uri(csvPath).LocalPath;
+
+            using (var fs = File.OpenRead(filePath))
+            using (var reader = new StreamReader(fs))
+            {
+                while ((line = reader.ReadLine()) != null)
+                {
+                    var parts = line.Split(';');
+                    var codigo = parts[0];
+                    var generico = parts[1];
+                    if (k > 0)
+                    {
+                        builder.Entity<Generico>().HasData(
+                            new Generico
+                            {
+                                Codigo = Convert.ToInt32(codigo),
+                                Nome = generico
+                            });
+                    }
+                    k++;
+                }
+            }
 
             return builder;
         }
