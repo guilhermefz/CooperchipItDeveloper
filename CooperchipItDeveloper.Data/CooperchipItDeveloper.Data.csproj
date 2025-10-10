@@ -29,4 +29,8 @@
     <ProjectReference Include="..\CooperchipItDeveloper.Domain\CooperchipItDeveloper.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
