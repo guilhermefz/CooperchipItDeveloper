@@ -297,18 +297,3 @@ __pycache__/
 
 
 
-# .gitignore para .NET multi-projeto
-bin/
-obj/
-*.user
-*.suo
-*.pdb
-*.dll
-*.deps.json
-*.runtimeconfig.json
-*.cache
-.vs/
-.idea/
-.vscode/
-
-
