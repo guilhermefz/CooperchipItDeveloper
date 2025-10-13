@@ -1,10 +1,19 @@
-﻿ @model IEnumerable<CooperchipItDeveloper.Domain.Entities.Generico>
+﻿<link rel="stylesheet" href="~/css/generico.css" />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+@model IEnumerable<CooperchipItDeveloper.Domain.Entities.Generico>
+
+<div class="row">
+    <div class="col-md-6">
+        <p>
+            <a asp-action="Create" class="btn btn-outline-dark">Criar Novo</a>
+        </p>
+    </div>
+    <div class="col-md-5" style=" position:relative; z-index:0;">
+        <input id="searchBox" class="form-control" type="search" placeholder="Pesquisar..." aria-label="Search"  />
+    </div>
+</div>
+<table id="mainTable" class="table table-hover table-striped table-bordered">
+    <thead class="table-primary">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Codigo)
@@ -12,24 +21,29 @@
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
-            <th></th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Codigo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Codigo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="me-2" title="Editar"><i class="bi bi-pen-fill"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="me-2" title="Detalhes"><i class="bi bi-info-circle"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" title="Deletar"><i class="bi bi-trash3-fill"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@section Scripts {
+    <script src="~/js/generico.js"></script>
+}

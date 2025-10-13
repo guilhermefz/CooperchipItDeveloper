@@ -1,0 +1,32 @@
+﻿#mainTable {
+    table-layout: fixed;
+    width: 100%;
+}
+
+    #mainTable th, #mainTable td {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+    }
+
+        #mainTable th:nth-child(1), #mainTable td:nth-child(1) {
+            width: 10%;
+        }
+
+        #mainTable th:nth-child(2), #mainTable td:nth-child(2) {
+            width: 80%;
+        }
+
+        #mainTable th:nth-child(3), #mainTable td:nth-child(3) {
+            width: 10%;
+            text-align: center;
+        }
+
+        #mainTable td a {
+            margin-right: .25rem;
+        }
+
+            #mainTable td a:last-child {
+                margin-right: 0;
+            }
