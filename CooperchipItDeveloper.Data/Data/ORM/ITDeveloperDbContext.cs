@@ -13,6 +13,7 @@ namespace Cooperchip.ItDeveloper.Data.Data.ORM
         public DbSet<Paciente> Paciente { get; set; }
         public DbSet<EstadoPaciente> EstadoPaciente { get; set; }
         public DbSet<Generico> Genericos { get; set; }
+        public DbSet<Cid> Cids { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,6 +26,7 @@ namespace Cooperchip.ItDeveloper.Data.Data.ORM
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ITDeveloperDbContext).Assembly);
 
             modelBuilder.AddGenericos();
+            modelBuilder.AddCids();
 
             foreach (var relationship in modelBuilder.Model.GetEntityTypes()
                 .SelectMany(e => e.GetForeignKeys()))
@@ -60,6 +62,40 @@ namespace Cooperchip.ItDeveloper.Data.Data.ORM
                             {
                                 Codigo = Convert.ToInt32(codigo),
                                 Nome = generico
+                            });
+                    }
+                    k++;
+                }
+            }
+
+            return builder;
+        }
+
+
+        public static ModelBuilder AddCids(this ModelBuilder builder)
+        {
+            var k = 0;
+            string line;
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "docs", "Cid.csv");
+
+            using (var fs = File.OpenRead(filePath))
+            using (var reader = new StreamReader(fs))
+            {
+                while ((line = reader.ReadLine()) != null)
+                {
+                    var parts = line.Split(';');
+                    var cidinternalid = parts[0];
+                    var codigo = parts[1];
+                    var diagnostico = parts[2];
+
+                    if (k > 0)
+                    {
+                        builder.Entity<Cid>().HasData(
+                            new Cid
+                            {
+                                CidInternalId = Convert.ToInt32(cidinternalid),
+                                Codigo = codigo,
+                                Diagnostico = diagnostico
                             });
                     }
                     k++;
