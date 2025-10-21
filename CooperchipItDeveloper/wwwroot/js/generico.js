@@ -1,4 +1,21 @@
-﻿(function () {
+﻿$(document).on('click', '.details', function (e) {
+    e.preventDefault();
+    var id = $(this).data('id');
+    loadModal("/Generico/Details" + (id ? "?id=" + id : ""));
+});
+
+function loadModal(url) {
+    $("#modalGnerico").load(url, function () {
+        if (typeof $().modal === "function") {
+            $("#modalGnerico").modal('show');
+        } else {
+            new bootstrap.Modal(document.getElementById('modalGnerico')).show();
+        }
+    });
+}
+
+
+(function () {
     const input = document.getElementById('searchBox');
     const tbody = document.querySelector('#mainTable tbody');
     if (!input || !tbody) return;
