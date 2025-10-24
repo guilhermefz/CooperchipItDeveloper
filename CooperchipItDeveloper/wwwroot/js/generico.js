@@ -1,15 +1,28 @@
-﻿$(document).on('click', '.details', function (e) {
+﻿$(document).on('click', '.details, .delete', function (e) {
     e.preventDefault();
+    var $el = $(this);
     var id = $(this).data('id');
-    loadModal("/Generico/Details" + (id ? "?id=" + id : ""));
+
+    if ($(this).hasClass('details')) {
+        loadModal("/Generico/Details" + (id ? "?id=" + id : ""));
+        return;
+    } 
+
+    if ($el.hasClass('delete')) {
+        if (!id) {
+            alert('Erro: ID do item não encontrado.');
+            return;
+        }
+        loadModal("/Generico/Delete?id=" + id);
+    }
 });
 
 function loadModal(url) {
-    $("#modalGnerico").load(url, function () {
+    $("#modalGenerico").load(url, function () {
         if (typeof $().modal === "function") {
-            $("#modalGnerico").modal('show');
+            $("#modalGenerico").modal('show');
         } else {
-            new bootstrap.Modal(document.getElementById('modalGnerico')).show();
+            new bootstrap.Modal(document.getElementById('modalGenerico')).show();
         }
     });
 }
