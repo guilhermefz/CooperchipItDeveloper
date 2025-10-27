@@ -1,7 +1,9 @@
 ﻿using Cooperchip.ItDeveloper.Data.Data.ORM;
+using Cooperchip.ITDeveloper.Application.Extensions;
 using CooperchipItDeveloper.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace CooperchipItDeveloper.Mvc.Controllers
@@ -24,44 +26,12 @@ namespace CooperchipItDeveloper.Mvc.Controllers
         [HttpGet]
         public async Task<IActionResult> ImportMedicamentos()
         {
-            var k = 0;
-            string line;
+            var fileName = ImportsUtils.GetFilePath("docs", "Medicamento", ".csv");
+            ReadWriteFile rwf = new ReadWriteFile();
+            if (!await rwf.ReadAndWriteCsvAsync(fileName, _context))
+                return View("JaTemMedicamento", _context.Medicamentos.AsNoTracking().OrderBy(o => o.Codigo));
 
-            var baseDirectory = Directory.GetCurrentDirectory();
-  
-            string filePath = Path.Combine(baseDirectory, "docs", "Medicamento.csv");
-
-            using (var fs = System.IO.File.OpenRead(filePath))
-            using (var sr = new StreamReader(fs))
-                while ((line = sr.ReadLine()) != null)
-                {
-                    var parts = line.Split(";");
-                    // Pular o cabeçalho
-                    if (k > 0)
-                    {
-                        int.TryParse(parts[0], out int codigoMedicamento);
-                        var descricao = parts[1];
-                        var generico = parts[2];
-                        int.TryParse(parts[3], out int genericoId);
-
-                        _context.Add(new Medicamento
-                        {
-                            Codigo = codigoMedicamento,
-                            Descricao = descricao,
-                            Generico = generico,
-                            CodigoGenerico = genericoId
-                        });
-                    }
-                    k++;
-                }
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction("CsvImportado");
-        }
-
-        public IActionResult CsvImportado()
-        {
-            return View();
+            return View("ListaMedicamentos", _context.Medicamentos.AsNoTracking().OrderBy(o => o.Codigo));
         }
     }
 }
