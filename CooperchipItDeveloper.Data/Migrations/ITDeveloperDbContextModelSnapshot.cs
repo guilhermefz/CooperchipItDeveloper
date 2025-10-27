@@ -491,7 +491,7 @@ namespace CooperchipItDeveloper.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genericos");
+                    b.ToTable("Genericos", (string)null);
 
                     b.HasData(
                         new
