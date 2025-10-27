@@ -1,10 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Cooperchip.ItDeveloper.Data.Data.ORM;
+using CooperchipItDeveloper.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
 
 namespace CooperchipItDeveloper.Mvc.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ConfigController : Controller
     {
+        private readonly ITDeveloperDbContext _context;
+
+        public ConfigController(ITDeveloperDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -16,25 +27,40 @@ namespace CooperchipItDeveloper.Mvc.Controllers
             var k = 0;
             string line;
 
-            var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
-            var csvPath = Path.Combine(outPutDirectory, "Csv\\Medicamento.csv");
-            string filePath = new Uri(csvPath).LocalPath;
+            var baseDirectory = Directory.GetCurrentDirectory();
+  
+            string filePath = Path.Combine(baseDirectory, "docs", "Medicamento.csv");
 
             using (var fs = System.IO.File.OpenRead(filePath))
-            using (var reader = new StreamReader(fs))
-                while ((line = reader.ReadLine()) != null)
+            using (var sr = new StreamReader(fs))
+                while ((line = sr.ReadLine()) != null)
                 {
-                    var parts = line.Split(",");
+                    var parts = line.Split(";");
                     // Pular o cabeçalho
                     if (k > 0)
                     {
-                        var codigoMedicamento = parts[0];
+                        int.TryParse(parts[0], out int codigoMedicamento);
                         var descricao = parts[1];
                         var generico = parts[2];
-                        var genericoId = parts[3];
-                    }
-                }
+                        int.TryParse(parts[3], out int genericoId);
 
+                        _context.Add(new Medicamento
+                        {
+                            Codigo = codigoMedicamento,
+                            Descricao = descricao,
+                            Generico = generico,
+                            CodigoGenerico = genericoId
+                        });
+                    }
+                    k++;
+                }
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("CsvImportado");
+        }
+
+        public IActionResult CsvImportado()
+        {
             return View();
         }
     }
