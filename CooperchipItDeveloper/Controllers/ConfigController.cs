@@ -23,6 +23,21 @@ namespace CooperchipItDeveloper.Mvc.Controllers
             return View();
         }
 
+        public IActionResult MenuConfig()
+        {
+            return View();
+        }
+
+        public IActionResult ImportarCid()
+        {
+            return View();
+        }
+
+        public IActionResult ImportarGenerico()
+        {
+            return View();
+        }
+
         [HttpGet]
         public async Task<IActionResult> ImportMedicamentos()
         {
