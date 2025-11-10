@@ -1,0 +1,51 @@
+CidAdaptadaId;Codigo;Diagnostico
+1;A00;Cólera
+2;A00.0;Cólera devida a Vibrio cholerae 01, biótipo cholerae
+3;A00.1;Cólera devida a Vibrio cholerae 01, biótipo El Tor
+4;A00.9;Cólera não especificada
+5;A01;Febres tifoide e paratifóide
+6;A01.0;Febre tifoide
+7;A01.1;Febre paratifoide A
+8;A01.2;Febre paratifoide B
+9;A01.3;Febre paratifoide C
+10;A01.4;Febre paratifoide não especificada
+11;A02;Outras infecções por Salmonella
+12;A02.0;Enterite por Salmonella
+13;A02.1;Septicemia por Salmonella
+14;A02.2;Infecções localizadas por Salmonella
+15;A02.8;Outras infecções especificadas por Salmonella
+16;A02.9;Infecção por Salmonella não especificada
+17;A03;Shiguelose
+18;A03.0;Shiguelose devida a Shigella dysenteriae
+19;A03.1;Shiguelose devida a Shigella flexneri
+20;A03.2;Shiguelose devida a Shigella boydii
+21;A03.3;Shiguelose devida a Shigella sonnei
+22;A03.8;Outras shigueloses
+23;A03.9;Shiguelose não especificada
+24;A04;Infecções intestinais bacterianas específicas
+25;A04.0;Infecção por Escherichia coli enteropatogênica
+26;A04.1;Infecção por Escherichia coli enterotoxigênica
+27;A04.2;Infecção por Escherichia coli enteroinvasiva
+28;A04.3;Infecção por Escherichia coli enterohemorrágica
+29;A04.4;Outras infecções intestinais por Escherichia coli
+30;A04.5;Enterite por Campylobacter
+31;A04.6;Enterite devida a Yersinia enterocolitica
+32;A04.7;Enterocolite devida a Clostridium difficile
+33;A04.8;Outras infecções intestinais especificadas
+34;A04.9;Infecção intestinal bacteriana não especificada
+35;A05;Intoxicações alimentares bacterianas
+36;A05.0;Intoxicação alimentar estafilocócica
+37;A05.1;Intoxicação alimentar devida a Clostridium perfringens
+38;A05.2;Intoxicação alimentar devida a Bacillus cereus
+39;A05.3;Intoxicação alimentar devida a Vibrio parahaemolyticus
+40;A05.4;Intoxicação alimentar devida a Salmonella
+41;A05.8;Outras intoxicações alimentares bacterianas especificadas
+42;A05.9;Intoxicação alimentar bacteriana não especificada
+43;A06;Amebíase
+44;A06.0;Amebíase intestinal aguda
+45;A06.1;Amebíase hepática
+46;A06.2;Amebíase pulmonar
+47;A06.3;Amebíase cutânea
+48;A06.4;Amebíase ocular
+49;A06.9;Amebíase não especificada
+50;A07;Outras infecções intestinais parasitárias
