@@ -4,6 +4,7 @@ using CooperchipItDeveloper.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
+using X.PagedList;
 
 namespace CooperchipItDeveloper.Mvc.Controllers
 {
@@ -17,10 +18,12 @@ namespace CooperchipItDeveloper.Mvc.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index(int? pagina)
         {
-            var cids = await _context.Cids.AsNoTracking().OrderBy(o => o.CidInternalId).Where( c => c.CidInternalId < 1000).ToListAsync();
+            const int itensPorPagina = 8;
+            int numeroPagina = (pagina ?? 1);
 
+            var cids = _context.Cids.AsNoTracking().OrderBy(o => o.CidInternalId).ToPagedList(numeroPagina, itensPorPagina);
             return View(cids);
         }
 
