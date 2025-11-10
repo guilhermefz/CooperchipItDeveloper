@@ -3,6 +3,7 @@ using Cooperchip.ITDeveloper.Application.Extensions;
 using CooperchipItDeveloper.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text;
 
 namespace CooperchipItDeveloper.Mvc.Controllers
 {
@@ -42,9 +43,11 @@ namespace CooperchipItDeveloper.Mvc.Controllers
             string line;
 
             List<Cid> cids = new List<Cid>();
+            Encoding encodingPage = Encoding.GetEncoding(1252);
+            bool detectEncoding = false;
 
             using (var fs = System.IO.File.OpenRead(filePath))
-            using (var stream = new StreamReader(fs))
+            using (var stream = new StreamReader(fs, encoding: encodingPage, detectEncoding))
                 while ((line = stream.ReadLine()) != null)
                 {
                     string[] parts = line.Split(";");

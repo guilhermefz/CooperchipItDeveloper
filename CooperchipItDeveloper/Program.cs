@@ -12,6 +12,7 @@ using CooperchipItDeveloper.Mvc.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
+using System.Text;
 
 namespace CooperchipItDeveloper
 {
@@ -68,6 +69,10 @@ namespace CooperchipItDeveloper
 
             builder.Services.AddScoped<PacienteService>();
             builder.Services.AddScoped<EstadoPacienteService>();
+
+            //fornece acesso a um provedor de codificação para páginas de código que, de outra forma,
+            //estão disponíveis apenas no .Net Framework para Desktop
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             var app = builder.Build();
 
