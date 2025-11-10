@@ -18,13 +18,35 @@ namespace CooperchipItDeveloper.Mvc.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(int? pagina)
+        public IActionResult Index(int? pagina, string ordenacao, string stringBusca)
         {
             const int itensPorPagina = 8;
             int numeroPagina = (pagina ?? 1);
 
-            var cids = _context.Cids.AsNoTracking().OrderBy(o => o.CidInternalId).ToPagedList(numeroPagina, itensPorPagina);
-            return View(cids);
+            ViewData["ordenacao"] = ordenacao;
+            ViewData["filtroAtual"] = stringBusca;
+
+            var cids = from c in _context.Cids select c;
+
+            if (!string.IsNullOrEmpty(stringBusca)) cids = cids.Where(s => s.Codigo.Contains(stringBusca) || s.Diagnostico.Contains(stringBusca));
+
+            ViewData["OrderByInternalId"] = string.IsNullOrEmpty(ordenacao) ? "CidInternalId_desc" : "";
+            ViewData["OrderByCodigo"] = ordenacao == "Codigo" ? "Codigo_desc" : "Codigo";
+            ViewData["OrderByDiagnostico"] = ordenacao == "Diagnostico" ? "Diagnostico_desc" : "Diagnostico";
+
+            if (string.IsNullOrEmpty(ordenacao)) ordenacao = "CidInternalId";
+
+            if(ordenacao.EndsWith("_desc"))
+            {
+                ordenacao = ordenacao.Substring(0, ordenacao.Length - 5);
+                cids = cids.OrderByDescending(x => EF.Property<object>(x, ordenacao));
+            }else
+            {
+                cids = cids.OrderBy(x => EF.Property<object>(x, ordenacao));
+            }
+
+            var cid = cids.AsNoTracking().ToPagedList(numeroPagina, itensPorPagina);
+            return View(cid);
         }
 
         public IActionResult ArquivoInvalido()
