@@ -1,0 +1,44 @@
+﻿@using CooperchipItDeveloper.Domain.Entities
+
+@model Cid
+
+
+@{
+    ViewBag.Title = "Detalhes da Cid:  " + Model.Diagnostico.ToUpper();
+}
+
+@{
+    Layout = null;
+}
+
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="form-horizontal">
+
+                <div>
+                    <h4> @ViewBag.Title </h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+
+                        <dt>ID: </dt>
+                        <dd>@Html.DisplayFor(model => model.Id)</dd>
+
+                        <dt>CÓDIGO: </dt>
+                        <dd>@Html.DisplayFor(model => model.Codigo)</dd>
+
+                        <dt>GENÉRICO: </dt>
+                        <dd>@Html.DisplayFor(model => model.Diagnostico)</dd>
+
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a asp-controller="Cid" asp-action="Index" class="btn btn-outline-info">Fechar</a>
+        </div>
+
+    </div>
+</div>

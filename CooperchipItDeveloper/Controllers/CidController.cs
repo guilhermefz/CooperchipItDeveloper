@@ -99,5 +99,122 @@ namespace CooperchipItDeveloper.Mvc.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Cid cid)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Add(cid);
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(cid);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(Guid? id)
+        {
+            if (id.Value == null)
+            {
+                return NotFound();
+            }
+
+            var cid = await _context.Cids.FirstOrDefaultAsync(m => m.Id == id);
+            if (cid == null)
+            {
+                return NotFound();
+            }
+
+            return View(cid);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var cid = await _context.Cids.FirstOrDefaultAsync(m => m.Id == id);
+            if (cid == null)
+            {
+                return NotFound();
+            }
+
+            return View(cid);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        {
+            var cid = await _context.Cids.FindAsync(id);
+            _context.Cids.Remove(cid);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(Guid? id)
+        {
+            if(id ==null)
+                return NotFound();
+
+            var cid = await _context.Cids.FindAsync(id);
+            
+            if(cid == null)
+                return NotFound();
+
+            return View(cid);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Guid id, Cid cid)
+        {
+            if(id != cid.Id)
+                return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(cid);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!CidExists(cid.Id))
+                    {
+                        return NotFound();
+                    }else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(cid);
+        }
+
+        private bool CidExists(Guid id)
+        {
+            return _context.Cids.Any(m => m.Id == id);
+        }
     }
 }

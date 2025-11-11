@@ -1,0 +1,51 @@
+﻿@model CooperchipItDeveloper.Domain.Entities.Cid
+
+@{
+    Layout = null;
+}
+
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h5 class="modal-title" id="myModalLabel">Confirmar Exclusão</h5>
+
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+
+            <h5>Tem certeza que deseja excluir este item?</h5>
+
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Id)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.CidInternalId)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.Diagnostico)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Diagnostico)
+                </dd>
+            </dl>
+
+        </div>
+
+        <div class="modal-footer">
+            <form asp-action="Delete" class="w-100">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+                    <input type="submit" value="Excluir Agora" class="btn btn-outline-danger" />
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
