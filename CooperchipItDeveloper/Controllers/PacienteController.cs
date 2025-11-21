@@ -16,12 +16,14 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         private readonly PacienteService _pacienteService;
         private readonly IMapper _mapper;
         private readonly INotyfService _notyf;
+        private readonly ILogger<PacienteController> _logger;
 
-        public PacienteController(PacienteService pacienteService, IMapper mapper, INotyfService notyf )
+        public PacienteController(PacienteService pacienteService, IMapper mapper, INotyfService notyf, ILogger<PacienteController> logger )
         {
             _pacienteService = pacienteService;
             _mapper = mapper;
             _notyf = notyf;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -99,6 +101,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
 
         public async Task<IActionResult> Index()
         {
+            _logger.LogError("Teste de log Serilog(Seq) - A tela inicial de pacientes foi aberta.");
             var pacientes = await _pacienteService.BuscarPacientesAsync();
             List<PacienteViewModel> list = new();
 

@@ -6,12 +6,10 @@ using Cooperchip.ItDeveloper.Mvc.Services;
 using CooperchipItDeveloper.Mvc.Configuration;
 using CooperchipItDeveloper.Mvc.Data;
 using CooperchipItDeveloper.Mvc.Extensions;
-using CooperchipItDeveloper.Mvc.Extensions.Middlewares;
-using CooperchipItDeveloper.Mvc.Security.Services;
+using CooperchipItDeveloper.Mvc.Extensions.ExtensionsMethods;
 using CooperchipItDeveloper.Mvc.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
 using System.Text;
 
 namespace CooperchipItDeveloper
@@ -37,6 +35,8 @@ namespace CooperchipItDeveloper
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CooperchipItDeveloper.Mvc;Trusted_Connection=True;MultipleActiveResultSets=true"));
+
+            builder.Services.AdicionarProvedorDeLogs(builder.Configuration);
 
             builder.Services.AddIddentityConfig(builder.Configuration);
 
