@@ -1,0 +1,43 @@
+﻿@model CooperchipItDeveloper.Domain.Entities.Cid
+
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        
+        <div class="modal-header">
+            <h4 class="modal-title">Adicionar Nova CID</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+
+        <form asp-action="Create">
+            <div class="modal-body">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+                <div class="form-group">
+                    <label asp-for="CidInternalId" class="control-label"></label>
+                    <input asp-for="CidInternalId" class="form-control" />
+                    <span asp-validation-for="CidInternalId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Codigo" class="control-label"></label>
+                    <input asp-for="Codigo" class="form-control" />
+                    <span asp-validation-for="Codigo" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Diagnostico" class="control-label"></label>
+                    <input asp-for="Diagnostico" class="form-control" />
+                    <span asp-validation-for="Diagnostico" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-outline-secondary">Fechar</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+@await Html.PartialAsync("_ValidationScriptsPartial")

@@ -103,7 +103,7 @@ namespace CooperchipItDeveloper.Mvc.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            return PartialView("_Create");
         }
 
         [HttpPost]
@@ -123,7 +123,7 @@ namespace CooperchipItDeveloper.Mvc.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(cid);
+            return PartialView("_Create", cid);
         }
 
         [HttpGet]

@@ -17,6 +17,16 @@
     }
 });
 
+$(function () {
+    $(".create").click(function (e) {
+        e.preventDefault();
+
+        $("#modalCid").load("/Cid/Create", function () {
+            $("#modalCid").modal("show");
+        });
+    });
+});
+
 function loadModal(url) {
     $("#modalCid").load(url, function () {
         if (typeof $().modal === "function") {
