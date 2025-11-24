@@ -181,7 +181,7 @@ namespace CooperchipItDeveloper.Mvc.Controllers
             if(cid == null)
                 return NotFound();
 
-            return View(cid);
+            return PartialView("_Edit", cid);
         }
 
         [HttpPost]
@@ -209,7 +209,7 @@ namespace CooperchipItDeveloper.Mvc.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(cid);
+            return PartialView("Edit", cid);
         }
 
         private bool CidExists(Guid id)

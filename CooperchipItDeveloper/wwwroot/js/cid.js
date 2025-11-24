@@ -25,6 +25,15 @@ $(function () {
             $("#modalCid").modal("show");
         });
     });
+
+    $(".edit").click(function (e) {
+        e.preventDefault();
+
+        var linkUrl = $(this).attr("href");
+        $("#modalCid").load(linkUrl, function () {
+            $("#modalCid").modal("show");
+        });
+    });
 });
 
 function loadModal(url) {
