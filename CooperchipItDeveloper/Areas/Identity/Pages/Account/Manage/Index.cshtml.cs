@@ -47,6 +47,10 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
             [DisplayName("Data de Nascimento")]
             public DateTime DataNascimento { get; set; }
 
+            [ProtectedPersonalData]
+            [DataType(DataType.Text)]
+            [StringLength(maximumLength: 255, ErrorMessage = "O campo {0} deve ter entre {2} e {1} caracteres", MinimumLength = 21)]
+            public string? imgProfilePath { get; set; }
         }
 
         private async Task LoadAsync(ApplicationUser user)
@@ -65,7 +69,8 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
                 PhoneNumber = phoneNumber,
                 NomeCompleto = nomeCompleto,
                 Apelido = apelido,
-                DataNascimento = dataNascimento
+                DataNascimento = dataNascimento,
+                imgProfilePath = user.imgProfilePath
             };
         }
 
@@ -122,6 +127,12 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
             if (Input.DataNascimento != user.DataNascimento) 
             {
                 user.DataNascimento = Input.DataNascimento;
+                profileUpdated = true;
+            }
+
+            if (Input.imgProfilePath != user.imgProfilePath)
+            {
+                user.imgProfilePath = Input.imgProfilePath;
                 profileUpdated = true;
             }
 

@@ -4,6 +4,7 @@
 
 using AspNetCoreHero.ToastNotification.Abstractions;
 using CooperchipItDeveloper.Mvc.Extensions;
+using CooperchipItDeveloper.Mvc.Intra;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -18,6 +19,7 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
+        private readonly IUnitOfUpload _unitOfUpload;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IUserStore<ApplicationUser> _userStore;
@@ -32,7 +34,8 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
-            INotyfService notyf)
+            INotyfService notyf,
+            IUnitOfUpload unitOfUpload)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -41,6 +44,7 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
             _logger = logger;
             _emailSender = emailSender;
             _notyf = notyf;
+            _unitOfUpload = unitOfUpload;
         }
 
         [BindProperty]
@@ -86,6 +90,10 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
             [Display(Name = "Data de Nascimento")]
             public DateTime DataNascimento { get; set; }
 
+            [ProtectedPersonalData]
+            [DataType(DataType.Text)]
+            [StringLength(maximumLength: 255, ErrorMessage = "O campo {0} deve ter entre {2} e {1} caracteres", MinimumLength = 21)]
+            public string? imgProfilePath { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -94,18 +102,22 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        public async Task<IActionResult> OnPostAsync(IFormFile file, string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
+                if(!(file == null || string.IsNullOrEmpty(file.FileName))) 
+                    _unitOfUpload.UploadImage(file);
+
                 var user = CreateUser();
 
 
                 user.NomeCompleto = Input.NomeCompleto;
                 user.Apelido = Input.Apelido;
                 user.DataNascimento = Input.DataNascimento;
+                user.imgProfilePath = file != null ? file.FileName : "";
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

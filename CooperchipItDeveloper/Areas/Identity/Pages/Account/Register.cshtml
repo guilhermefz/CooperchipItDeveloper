@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" enctype="multipart/form-data">
             <h2>Criar uma nova conta.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
@@ -44,6 +44,15 @@
                 <input asp-for="Input.DataNascimento" class="form-control" autocomplete="nascimento" aria-required="true" placeholder="escreva a data do seu nascimento" />
                 <label asp-for="Input.DataNascimento">Data de Nascimento</label>
                 <span asp-validation-for="Input.DataNascimento" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="customFile" class="form-label">Escolha a Imagem</label>
+                <div class="input-group"><span class="input-group-text"><i class="fa fa-user"></i></span>
+                    @* <input asp-for="Input.imgProfilePath" type="file" class="form-control"id="customFile" /> *@
+                    <input type="file" name="file" class="form-control" id="customFile" />
+                </div>
+                <span asp-validation-for="Input.imgProfilePath" class="text-danger"></span>
             </div>
 
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Registrar</button>

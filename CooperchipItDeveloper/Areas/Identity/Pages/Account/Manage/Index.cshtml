@@ -12,15 +12,19 @@
 
         <partial name="_StatusMessage" for="StatusMessage" />
 
-        <div class="m-3">
-            <img src="~/img/icon_perfil.png" alt="" height="150px" />
-        </div>
-
         <form id="profile-form" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
 
+            <label class="ms-4">Imagem Perfil</label><br />
+            @if(!string.IsNullOrEmpty(Model.Input.imgProfilePath))
+            {
+                <img src="~/uploads/@Model.Input.imgProfilePath" alt="Imagem de Perfil" height="150px" class="img-thumbnail"/>
+            }else
+            {
+                <img src="~/img/icon_perfil.png" alt="Imagem de Perfil" height="150px" />
+            }
 
-            <div class="mb-3">
+            <div class="mb-3 mt-3">
                 <label asp-for="Username" class="form-label">Usuário</label>
                 <input asp-for="Username" class="form-control" disabled>
                 <span asp-validation-for="Username" class="text-danger"></span>
@@ -56,7 +60,8 @@
 
             <div class="mb-3">
                 <label for="avatar" class="form-label">Foto de perfil</label>
-                <input type="file" id="avatar" name="avatar" class="form-control" accept="image/*">
+                @* <input type="file" id="avatar" name="avatar" class="form-control" accept="image/*"> *@
+                <input type="file" name="file" class="form-control" id="customFile" />
                 <div class="form-text">PNG/JPG, até 2MB.</div>
             </div>
 

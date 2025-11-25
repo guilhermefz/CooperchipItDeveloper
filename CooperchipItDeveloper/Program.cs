@@ -10,6 +10,7 @@ using CooperchipItDeveloper.Mvc.Extensions.ExtensionsMethods;
 using CooperchipItDeveloper.Mvc.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 using System.Text;
 
 namespace CooperchipItDeveloper
@@ -53,7 +54,7 @@ namespace CooperchipItDeveloper
 
                 // SignIn
                 options.SignIn.RequireConfirmedPhoneNumber = false;
-                options.SignIn.RequireConfirmedAccount = true;
+                options.SignIn.RequireConfirmedAccount = false;
                 options.SignIn.RequireConfirmedEmail = false;
 
                 // Password
@@ -69,6 +70,7 @@ namespace CooperchipItDeveloper
 
             builder.Services.AddScoped<PacienteService>();
             builder.Services.AddScoped<EstadoPacienteService>();
+            builder.Services.AddDependencyInjectConfig(builder.Configuration);
 
             //fornece acesso a um provedor de codificação para páginas de código que, de outra forma,
             //estão disponíveis apenas no .Net Framework para Desktop
