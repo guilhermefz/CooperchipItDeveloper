@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CooperchipItDeveloper.Data"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cooperchip.ITDeveloper.Application", "src\Cooperchip.ITDeveloper.Application\Cooperchip.ITDeveloper.Application.csproj", "{83077597-2C66-4135-B3E0-0B18E60DE413}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2.Repository", "4.2.Repository", "{6F3D78C3-BE8F-4D99-AAA0-CC7631D864D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.3.CrossCutting", "4.3.CrossCutting", "{B6C25ABC-5362-48FF-A74B-F52410BDBC6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cooperchip.ITDeveloper.CrossCutting", "src\Cooperchip.ITDeveloper.CrossCutting\Cooperchip.ITDeveloper.CrossCutting.csproj", "{ADCE1BC1-E396-4651-8567-B037D660AA3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +47,10 @@ Global
 		{83077597-2C66-4135-B3E0-0B18E60DE413}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83077597-2C66-4135-B3E0-0B18E60DE413}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83077597-2C66-4135-B3E0-0B18E60DE413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADCE1BC1-E396-4651-8567-B037D660AA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADCE1BC1-E396-4651-8567-B037D660AA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADCE1BC1-E396-4651-8567-B037D660AA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADCE1BC1-E396-4651-8567-B037D660AA3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +60,9 @@ Global
 		{192C453F-7128-4FD9-AE52-6EDE8C99ABD4} = {7D4CF6D1-A5A7-47E7-8793-723060CBC4C6}
 		{15D43E24-D083-49D4-9960-F22A7DC8F30D} = {8254F2F8-23EF-4D57-848F-FEB9CF250A9E}
 		{83077597-2C66-4135-B3E0-0B18E60DE413} = {9C436743-A874-4E9D-86C1-5937B63F394C}
+		{6F3D78C3-BE8F-4D99-AAA0-CC7631D864D6} = {8254F2F8-23EF-4D57-848F-FEB9CF250A9E}
+		{B6C25ABC-5362-48FF-A74B-F52410BDBC6C} = {8254F2F8-23EF-4D57-848F-FEB9CF250A9E}
+		{ADCE1BC1-E396-4651-8567-B037D660AA3F} = {B6C25ABC-5362-48FF-A74B-F52410BDBC6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DCE6CFC1-18FC-421A-A5DD-A885BC69FCDB}

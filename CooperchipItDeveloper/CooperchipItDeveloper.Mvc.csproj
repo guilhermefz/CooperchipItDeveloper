@@ -43,6 +43,7 @@
     <ProjectReference Include="..\CooperchipItDeveloper.Data\CooperchipItDeveloper.Data.csproj" />
     <ProjectReference Include="..\CooperchipItDeveloper.Domain\CooperchipItDeveloper.Domain.csproj" />
     <ProjectReference Include="..\src\Cooperchip.ITDeveloper.Application\Cooperchip.ITDeveloper.Application.csproj" />
+    <ProjectReference Include="..\src\Cooperchip.ITDeveloper.CrossCutting\Cooperchip.ITDeveloper.CrossCutting.csproj" />
   </ItemGroup>
 
   <ItemGroup>
