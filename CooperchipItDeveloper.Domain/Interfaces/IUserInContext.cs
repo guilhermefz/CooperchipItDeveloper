@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CooperchipItDeveloper.Domain.Interfaces
 {
-    public interface IUserInContext<TKey>
+    public interface IUserInContext
     {
         string Name { get; }
         Guid GetUserId();

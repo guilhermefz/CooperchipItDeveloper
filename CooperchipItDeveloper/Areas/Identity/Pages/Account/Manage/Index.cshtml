@@ -19,10 +19,10 @@
             <div id="div_img_profile">
                 @if(!string.IsNullOrEmpty(Model.Input.imgProfilePath))
                 {
-                    <img src="~/uploads/@Model.Input.imgProfilePath" alt="Imagem de Perfil" style="height: 150px;" class="border-radius: 50%; align-content-center;" />
+                    <img class="imgProfileRegister" src="~/uploads/@Model.Input.imgProfilePath" alt="Imagem de Perfil" style="height: 150px;" class="align-content-center;" />
                 }else
                 {
-                    <img src="~/img/icon_perfil.png" alt="Imagem de Perfil" style="height: 150px" class="border: 2px solid #eeeeee; border-radius: 50%;" />
+                    <img class="imgProfileRegister" src="~/img/icon_perfil.png" alt="Imagem de Perfil" style="height: 150px" class="border: 2px solid #eeeeee; border-radius: 50%;" />
                 }
             </div>
 

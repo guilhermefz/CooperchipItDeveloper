@@ -58,6 +58,21 @@ body {
     background-color: #2081C3 !important;
 }
 
-.div_img_profile{
-
+.imgProfileCabecalho {
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #000;
 }
+    .imgProfileCabecalho:hover {
+        transform: scale(1.05);
+    }
+
+.imgProfileRegister {
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+    .imgProfileRegister:hover {
+        transform: scale(1.05);
+    }

@@ -1,7 +1,9 @@
 ﻿using Cooperchip.ITDeveloper.CrossCutting.Helpers;
 using CooperchipItDeveloper.Domain.Interfaces;
+using CooperchipItDeveloper.Mvc.Extensions;
 using CooperchipItDeveloper.Mvc.Extensions.Services;
 using CooperchipItDeveloper.Mvc.Intra;
+using Microsoft.AspNetCore.Identity;
 
 namespace CooperchipItDeveloper.Mvc.Configuration
 {
@@ -13,7 +15,9 @@ namespace CooperchipItDeveloper.Mvc.Configuration
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddScoped<IUserInContext<Guid>, AspNetUser>();
+            services.AddScoped<IUserInContext, AspNetUser>();
+
+            services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, UserClaimsService>();
 
             return services;
         }
