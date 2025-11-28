@@ -61,8 +61,7 @@ body {
 .imgProfileCabecalho {
     height: 50px;
     border-radius: 50%;
-    background-color: transparent;
-    border: 1px solid #000;
+    background-color: transparent;  
 }
     .imgProfileCabecalho:hover {
         transform: scale(1.05);

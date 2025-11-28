@@ -2,7 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
+using AspNetCoreHero.ToastNotification.Abstractions;
 using CooperchipItDeveloper.Mvc.Extensions;
+using CooperchipItDeveloper.Mvc.Intra;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,13 +15,17 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
 {
     public class IndexModel : PageModel
     {
+        private readonly IUnitOfUpload _unitOfUpload;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly INotyfService _notyf;
 
-        public IndexModel( UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public IndexModel( UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IUnitOfUpload unitOfUpload, INotyfService notyf)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _unitOfUpload = unitOfUpload;
+            _notyf = notyf;
         }
 
         public string Username { get; set; }
@@ -86,7 +92,7 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(IFormFile file)
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
@@ -112,7 +118,8 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
             }
 
             bool profileUpdated = false;
-            if (Input.Apelido != user.NomeCompleto)
+
+            if (Input.NomeCompleto != user.NomeCompleto)
             {
                 user.NomeCompleto = Input.NomeCompleto;
                 profileUpdated = true;
@@ -130,9 +137,10 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
                 profileUpdated = true;
             }
 
-            if (Input.imgProfilePath != user.imgProfilePath)
+            if (file != null && file.Length > 0)
             {
-                user.imgProfilePath = Input.imgProfilePath;
+                _unitOfUpload.UploadImage(file);
+                user.imgProfilePath = file.FileName;
                 profileUpdated = true;
             }
 
@@ -141,13 +149,13 @@ namespace CooperchipItDeveloper.Mvc.Areas.Identity.Pages.Account.Manage
                 var updateResult = await _userManager.UpdateAsync(user);
                 if(!updateResult.Succeeded)
                 {
-                    StatusMessage = "Erro inesperado na tentativa de atualizar o perfil.";
+                    _notyf.Error( "Erro ao atualizar perfil, consulte um administrador do sistema.");
                     return RedirectToPage();
                 }
             }
 
             await _signInManager.RefreshSignInAsync(user);
-            StatusMessage = "Your profile has been updated";
+            _notyf.Success("Perfil atualizado com sucesso!");
             return RedirectToPage();
         }
     }
