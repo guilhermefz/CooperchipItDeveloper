@@ -1,0 +1,42 @@
+﻿@using CooperchipItDeveloper.Domain.Entities
+@model PacienteViewModel
+
+@{ ViewBag.Title = "Detalhes de Paciente"; }
+@{ Layout = null; }
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="form-horizontal">
+
+                <div>
+                    <h4>@ViewBag.Title</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+
+                        <dt>ID: </dt>
+                        <dd>@Html.DisplayFor(model => model.Id)</dd>
+
+                        <dl>Nome: </dl>
+                        <dd>@Html.DisplayFor(model => model.Nome)</dd>
+
+                        <dl>Nascimento: </dl>
+                        <dd>@Html.DisplayFor(model => model.DataNascimento)</dd>
+
+                        <dl>Email: </dl>
+                        <dd>@Html.DisplayFor(model => model.Email)</dd>
+
+                        <dl>Estado: </dl>
+                        <dd>@Html.DisplayFor(model => model.EstadoPaciente.Descricao)</dd>
+
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a asp-controller="Paciente" asp-action="Index" class="btn btn-outline-info">Fechar</a>
+        </div>
+    </div>
+</div>
+
