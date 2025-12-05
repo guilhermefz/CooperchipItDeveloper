@@ -1,13 +1,7 @@
 ﻿using Cooperchip.ItDeveloper.Data.Data.ORM;
-using Cooperchip.ItDeveloper.Domain.Entities.Base;
 using Cooperchip.ITDeveloper.Domain.Core.Base;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Repository.Base
 {
@@ -15,7 +9,7 @@ namespace Cooperchip.ITDeveloper.Repository.Base
     {
         protected ITDeveloperDbContext _context;
 
-        public RepositoryGeneric(ITDeveloperDbContext context)
+        protected RepositoryGeneric(ITDeveloperDbContext context)
         {
             _context = context;
         }

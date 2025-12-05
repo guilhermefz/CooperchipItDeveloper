@@ -3,6 +3,7 @@ using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
 using Cooperchip.ItDeveloper.Mvc.Models;
 using Cooperchip.ItDeveloper.Mvc.Services;
+using CooperchipItDeveloper.Domain.Interfaces.Entidades;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,19 +18,22 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         private readonly IMapper _mapper;
         private readonly INotyfService _notyf;
         private readonly ILogger<PacienteController> _logger;
+        private readonly IRepositoryDomainPaciente _repositoryPaciente;
 
-        public PacienteController(PacienteService pacienteService, IMapper mapper, INotyfService notyf, ILogger<PacienteController> logger )
+        public PacienteController(PacienteService pacienteService, IMapper mapper, INotyfService notyf, ILogger<PacienteController> logger, IRepositoryDomainPaciente repositoryPaciente)
         {
             _pacienteService = pacienteService;
             _mapper = mapper;
             _notyf = notyf;
             _logger = logger;
+            _pacienteService = pacienteService;
         }
 
         [HttpGet]
         public async Task<IActionResult> Details(Guid id)
         {
-            return View(await _pacienteService.PacienteDetalhe(id));
+            var viewModel = await _pacienteService.PacienteDetalhe(id);
+            return PartialView("_Details", viewModel);
         }
 
         [HttpGet]
@@ -98,7 +102,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             return View(pacientes);
         }
 
-
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             _logger.LogError("Teste de log Serilog(Seq) - A tela inicial de pacientes foi aberta.");

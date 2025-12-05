@@ -1,5 +1,7 @@
 ﻿using Cooperchip.ITDeveloper.CrossCutting.Helpers;
+using Cooperchip.ITDeveloper.Repository.Entidade;
 using CooperchipItDeveloper.Domain.Interfaces;
+using CooperchipItDeveloper.Domain.Interfaces.Entidades;
 using CooperchipItDeveloper.Mvc.Extensions;
 using CooperchipItDeveloper.Mvc.Extensions.Services;
 using CooperchipItDeveloper.Mvc.Intra;
@@ -18,6 +20,8 @@ namespace CooperchipItDeveloper.Mvc.Configuration
             services.AddScoped<IUserInContext, AspNetUser>();
 
             services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, UserClaimsService>();
+
+            services.AddScoped<IRepositoryDomainPaciente, PacienteRepository>();
 
             return services;
         }

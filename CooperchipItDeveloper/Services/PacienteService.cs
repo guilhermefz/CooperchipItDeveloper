@@ -2,6 +2,7 @@
 using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Domain.Entities;
 using Cooperchip.ItDeveloper.Mvc.Models;
+using CooperchipItDeveloper.Domain.Interfaces.Entidades;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
@@ -11,11 +12,13 @@ namespace Cooperchip.ItDeveloper.Mvc.Services
     {
         private readonly ITDeveloperDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IRepositoryDomainPaciente _repositoryPaciente;
 
-        public PacienteService(ITDeveloperDbContext context, IMapper mapper)
+        public PacienteService(ITDeveloperDbContext context, IMapper mapper, IRepositoryDomainPaciente repositoryPaciente)
         {
             _context = context;
             _mapper = mapper;
+            _repositoryPaciente = repositoryPaciente;
         }
 
         public async Task SalvarPacienteAsync(Paciente paciente)
@@ -28,14 +31,13 @@ namespace Cooperchip.ItDeveloper.Mvc.Services
 
         public async Task<List<Paciente>> BuscarPacientesAsync()
         {
-            var viewmodel = await _context.Paciente.Include(x => x.EstadoPaciente).AsNoTracking().ToListAsync();
-            return viewmodel;
+            var paciente =  await _repositoryPaciente.ListaPacientesComEstado();
+            return paciente.ToList();
         }
 
         public async Task<Paciente> BuscarPacientePorIdAsync(Guid id)
         {
-            var paciente = await _context.Paciente.Include(x => x.EstadoPaciente).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
-            return await Task.FromResult(paciente);
+            return await _repositoryPaciente.SelecionarPorId(id);
         }
 
         public async Task<List<PacienteViewModel>> BuscarPacientesPorEstadoAsync(Guid estadoPacienteId)

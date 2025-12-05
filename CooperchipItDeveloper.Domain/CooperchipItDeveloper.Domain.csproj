@@ -26,4 +26,8 @@
     <PackageReference Include="X.PagedList.Mvc.Core" Version="10.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cooperchip.ITDeveloper.Domain.Core\Cooperchip.ITDeveloper.Domain.Core.csproj" />
+  </ItemGroup>
+
 </Project>
