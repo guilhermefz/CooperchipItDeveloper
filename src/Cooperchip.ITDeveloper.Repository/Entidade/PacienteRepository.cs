@@ -29,5 +29,46 @@ namespace Cooperchip.ITDeveloper.Repository.Entidade
         {
             return await _context.Paciente.Include(e => e.EstadoPaciente).AsNoTracking().ToListAsync();
         }
+
+        public async Task<List<EstadoPaciente>> ListarEstadoPaciente()
+        {
+            return await _context.EstadoPaciente.AsNoTracking().ToListAsync();
+        }
+
+        public async Task<Paciente> ObterPacienteComEstadoPaciente(Guid pacienteId)
+        {
+            return await _context.Paciente.Include(e => e.EstadoPaciente).AsNoTracking().FirstOrDefaultAsync(x => x.Id == pacienteId);
+        }
+
+        public async Task<IEnumerable<Paciente>> ObterPacientesPorEstadoPaciente(Guid estadoPacienteId)
+        {
+            var lista = await _context.Paciente
+                .Include(ep => ep.EstadoPaciente)
+                .AsNoTracking()
+                .Where(x => x.EstadoPaciente.Id == estadoPacienteId)
+                .OrderBy(o => o.Nome)
+                .ToListAsync();
+
+            return lista;
+        }
+
+        public bool TemPaciente(Guid pacienteId)
+        {
+            return _context.Paciente.Any(p => p.Id == pacienteId);
+        }
+
+        public async Task<Paciente> PacienteDetalhe(Guid id)
+        {
+            return await _context.Paciente.Include(x => x.EstadoPaciente).AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<List<Paciente>> BuscarPacientesPorEstadoAsync(Guid estadoPacienteId)
+        {
+            return await _context.Paciente.Include(x => x.EstadoPaciente)
+                .AsNoTracking()
+                .Where(x => x.EstadoPaciente.Id == estadoPacienteId)
+                .OrderBy(OrderedParallelQuery => OrderedParallelQuery.Nome)
+                .ToListAsync();
+        }
     }
 }

@@ -1,11 +1,12 @@
 ﻿using Cooperchip.ItDeveloper.Data.Data.ORM;
+using Cooperchip.ItDeveloper.Domain.Entities.Base;
 using Cooperchip.ITDeveloper.Domain.Core.Base;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace Cooperchip.ITDeveloper.Repository.Base
 {
-    public abstract class RepositoryGeneric<TEntity, Tkey> : IDomainGenericRepository<TEntity, Tkey> where TEntity : class, new()
+    public abstract class RepositoryGeneric<TEntity, Tkey> : IDomainGenericRepository<TEntity, Tkey> where TEntity : EntityBase, new()
     {
         protected ITDeveloperDbContext _context;
 
@@ -14,15 +15,15 @@ namespace Cooperchip.ITDeveloper.Repository.Base
             _context = context;
         }
 
-        private async Task Salvar()
+        public virtual async Task<int> SaveAsync()
         {
-            await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync();
         }
 
         public virtual async Task Atualizar(TEntity obj)
         {
             _context.Entry(obj).State = EntityState.Modified;
-            await Salvar();
+            await SaveAsync();
         }
 
         public void Dispose()
@@ -33,7 +34,7 @@ namespace Cooperchip.ITDeveloper.Repository.Base
         public virtual async Task Excluir(TEntity obj)
         {
             _context.Entry(obj).State = EntityState.Deleted;
-            await Salvar();
+            await SaveAsync();
         }
 
         public virtual async Task ExcluirPorId(Tkey id)
@@ -45,7 +46,7 @@ namespace Cooperchip.ITDeveloper.Repository.Base
         public virtual async Task Inserir(TEntity obj)
         {
             _context.Set<TEntity>().Add(obj);
-            await Salvar();
+            await SaveAsync();
         }
 
         public async Task<TEntity> SelecionarPorId(Tkey id)

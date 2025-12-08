@@ -12,6 +12,11 @@ namespace CooperchipItDeveloper.Domain.Interfaces.Entidades
     {
         Task<IEnumerable<Paciente>> ListaPacientesComEstado();
         Task<IEnumerable<Paciente>> ListaPacientes();
-
+        Task<List<EstadoPaciente>> ListarEstadoPaciente();
+        Task<Paciente> ObterPacienteComEstadoPaciente(Guid pacienteId);
+        bool TemPaciente(Guid pacienteId);
+        Task<IEnumerable<Paciente>> ObterPacientesPorEstadoPaciente(Guid estadoPacienteId);
+        Task<Paciente> PacienteDetalhe(Guid id);
+        Task<List<Paciente>> BuscarPacientesPorEstadoAsync(Guid estadoPacienteId);
     }
 }

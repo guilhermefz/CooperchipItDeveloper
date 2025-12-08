@@ -1,33 +1,26 @@
 ﻿using AutoMapper;
-using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Domain.Entities;
 using Cooperchip.ItDeveloper.Mvc.Models;
 using CooperchipItDeveloper.Domain.Interfaces.Entidades;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
+using CooperchipItDeveloper.Domain.Interfaces.Services;
 
 namespace Cooperchip.ItDeveloper.Mvc.Services
 {
-    public class PacienteService
+    public class PacienteService : IServicePaciente
     {
-        private readonly ITDeveloperDbContext _context;
         private readonly IMapper _mapper;
         private readonly IRepositoryDomainPaciente _repositoryPaciente;
 
-        public PacienteService(ITDeveloperDbContext context, IMapper mapper, IRepositoryDomainPaciente repositoryPaciente)
+        public PacienteService(IMapper mapper, IRepositoryDomainPaciente repositoryPaciente)
         {
-            _context = context;
             _mapper = mapper;
             _repositoryPaciente = repositoryPaciente;
         }
 
         public async Task SalvarPacienteAsync(Paciente paciente)
         {
-             _context.Set<Paciente>().Add(paciente);
-            await _context.SaveChangesAsync();
+            await _repositoryPaciente.Inserir(paciente);
         }
-
-
 
         public async Task<List<Paciente>> BuscarPacientesAsync()
         {
@@ -42,8 +35,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Services
 
         public async Task<List<PacienteViewModel>> BuscarPacientesPorEstadoAsync(Guid estadoPacienteId)
         {
-            var pacientes = await _context.Paciente.Include(x => x.EstadoPaciente).AsNoTracking().Where(x => x.EstadoPaciente.Id == estadoPacienteId)
-            .OrderBy(OrderedParallelQuery => OrderedParallelQuery.Nome).ToListAsync();
+            var pacientes = await _repositoryPaciente.BuscarPacientesPorEstadoAsync(estadoPacienteId);
             List<PacienteViewModel> listViewModel = new();
 
             foreach (var item in pacientes)
@@ -55,34 +47,54 @@ namespace Cooperchip.ItDeveloper.Mvc.Services
 
         public async Task<PacienteViewModel> PacienteDetalhe(Guid id)
         {
-            var paciente = await _context.Paciente.Include(x => x.EstadoPaciente).AsNoTracking().FirstOrDefaultAsync(x=> x.Id == id);
+            var paciente = await _repositoryPaciente.PacienteDetalhe(id);
             var viewModel = _mapper.Map<PacienteViewModel>(paciente);
 
             return viewModel;
         }
         public bool TemPaciente(Guid pacienteId)
         {
-            return _context.Paciente.Any(x => x.Id == pacienteId);
+            return _repositoryPaciente.TemPaciente(pacienteId);
         }
 
         public async Task<List<EstadoPaciente>> ListarEstadoPaciente()
         {
-            return await _context.EstadoPaciente.AsNoTracking().ToListAsync();
+            return await _repositoryPaciente.ListarEstadoPaciente();
         }
-
 
         public async Task Editar(Paciente paciente)
         {
-            _context.Entry(paciente).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+            await _repositoryPaciente.Atualizar(paciente);
         }
 
         public async Task Deletar(Paciente paciente)
         {
-            _context.Remove(paciente);
-            await _context.SaveChangesAsync();
+            await _repositoryPaciente.Excluir(paciente);
         }
 
-        
+        public Task<IEnumerable<Paciente>> ListaPacientesComEstado()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Paciente>> ListaPacientes()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<EstadoPaciente>> ListarEstadoDePaciente()
+        {
+            return await _repositoryPaciente.ListarEstadoPaciente();
+        }
+
+        public async Task<Paciente> ObterPacienteComEstadoPaciente(Guid pacienteId)
+        {
+            return await _repositoryPaciente.ObterPacienteComEstadoPaciente(pacienteId);
+        }
+
+        public async Task<IEnumerable<Paciente>> ObterPacientesPorEstadoPaciente(Guid id)
+        {
+            return await _repositoryPaciente.ObterPacientesPorEstadoPaciente(id);
+        }
     }
 }

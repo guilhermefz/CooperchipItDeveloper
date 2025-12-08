@@ -3,7 +3,7 @@ using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
 using Cooperchip.ItDeveloper.Mvc.Models;
 using Cooperchip.ItDeveloper.Mvc.Services;
-using CooperchipItDeveloper.Domain.Interfaces.Entidades;
+using CooperchipItDeveloper.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,19 +14,17 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
     [Authorize(Roles = "Admin")]
     public class PacienteController : Controller
     {
-        private readonly PacienteService _pacienteService;
+        private readonly IServicePaciente _pacienteService;
         private readonly IMapper _mapper;
         private readonly INotyfService _notyf;
         private readonly ILogger<PacienteController> _logger;
-        private readonly IRepositoryDomainPaciente _repositoryPaciente;
 
-        public PacienteController(PacienteService pacienteService, IMapper mapper, INotyfService notyf, ILogger<PacienteController> logger, IRepositoryDomainPaciente repositoryPaciente)
+        public PacienteController(IServicePaciente pacienteService, IMapper mapper, INotyfService notyf, ILogger<PacienteController> logger)
         {
             _pacienteService = pacienteService;
             _mapper = mapper;
             _notyf = notyf;
             _logger = logger;
-            _pacienteService = pacienteService;
         }
 
         [HttpGet]
@@ -200,6 +198,18 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             await _pacienteService.Deletar(paciente);
             TempData["Sucesso"] = "Registro Deletado com Sucesso!";
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> ReportForEstadoPaciente(Guid id)
+        {
+            if (id == null) return NotFound();
+
+            var pacientePorEstado = await _pacienteService.ObterPacientesPorEstadoPaciente(id);
+            var pacienteViewModel = _mapper.Map<IEnumerable<PacienteViewModel>>(pacientePorEstado);
+
+            if (pacienteViewModel == null) return NotFound();
+
+            return View(pacienteViewModel);
         }
 
 
