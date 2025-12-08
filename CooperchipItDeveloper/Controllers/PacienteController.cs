@@ -178,11 +178,12 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         public async Task<IActionResult> Delete(Guid id)
         {
             Paciente paciente = await _pacienteService.BuscarPacientePorIdAsync(id);
+            var viewModel = _mapper.Map<PacienteViewModel>(paciente);
             if (paciente is null)
             {
                 return NotFound();
             }
-            return View(_mapper.Map<PacienteViewModel>(paciente));
+            return View(viewModel);
         }
 
 
@@ -198,7 +199,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
 
             await _pacienteService.Deletar(paciente);
             TempData["Sucesso"] = "Registro Deletado com Sucesso!";
-            return Redirect(nameof(Index));
+            return RedirectToAction(nameof(Index));
         }
 
 
