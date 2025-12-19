@@ -44,10 +44,10 @@
     <ProjectReference Include="..\CooperchipItDeveloper.Domain\CooperchipItDeveloper.Domain.csproj" />
     <ProjectReference Include="..\src\Cooperchip.ITDeveloper.Application\Cooperchip.ITDeveloper.Application.csproj" />
     <ProjectReference Include="..\src\Cooperchip.ITDeveloper.CrossCutting\Cooperchip.ITDeveloper.CrossCutting.csproj" />
-    <ProjectReference Include="..\src\Cooperchip.ITDeveloper.Repository\Cooperchip.ITDeveloper.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Interfaces\Services\" />
     <Folder Include="wwwroot\importFile\" />
   </ItemGroup>
 

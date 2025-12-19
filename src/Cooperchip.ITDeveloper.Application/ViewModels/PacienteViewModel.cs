@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Cooperchip.ItDeveloper.Mvc.Models
+namespace Cooperchip.ITDeveloper.Application.ViewModels
 {
     public class PacienteViewModel 
     {
@@ -17,6 +17,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Models
 
         public IEnumerable<SelectListItem>? EstadosPaciente { get; set; }
 
+        [Display(Name = "Estado do Paciente")]
         public virtual EstadoPaciente? EstadoPaciente { get; set; }
 
         [DisplayName(displayName: "Nome do Paciente")]

@@ -1,7 +1,7 @@
 ﻿using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Domain.Entities;
 using Cooperchip.ITDeveloper.Repository.Base;
-using CooperchipItDeveloper.Domain.Interfaces.Entidades;
+using CooperchipItDeveloper.Domain.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,8 +13,6 @@ namespace Cooperchip.ITDeveloper.Repository.Entidade
 {
     public class PacienteRepository : RepositoryGeneric<Paciente, Guid>, IRepositoryDomainPaciente
     {
-        private readonly ITDeveloperDbContext _context;
-
         public PacienteRepository(ITDeveloperDbContext context) : base (context) 
         {
             _context = context;

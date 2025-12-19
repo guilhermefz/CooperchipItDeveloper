@@ -2,7 +2,7 @@
 using Cooperchip.ITDeveloper.CrossCutting.Helpers;
 using Cooperchip.ITDeveloper.Repository.Entidade;
 using CooperchipItDeveloper.Domain.Interfaces;
-using CooperchipItDeveloper.Domain.Interfaces.Entidades;
+using CooperchipItDeveloper.Domain.Interfaces.Repository;
 using CooperchipItDeveloper.Domain.Interfaces.Services;
 using CooperchipItDeveloper.Mvc.Extensions;
 using CooperchipItDeveloper.Mvc.Extensions.Services;

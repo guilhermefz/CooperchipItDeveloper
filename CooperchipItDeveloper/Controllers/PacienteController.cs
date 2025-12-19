@@ -1,8 +1,8 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
-using Cooperchip.ItDeveloper.Mvc.Models;
 using Cooperchip.ItDeveloper.Mvc.Services;
+using Cooperchip.ITDeveloper.Application.ViewModels;
 using CooperchipItDeveloper.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +30,8 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         [HttpGet]
         public async Task<IActionResult> Details(Guid id)
         {
-            var viewModel = await _pacienteService.PacienteDetalhe(id);
+            var Model = await _pacienteService.PacienteDetalhe(id);
+            var viewModel = _mapper.Map<PacienteViewModel>(Model);
             return PartialView("_Details", viewModel);
         }
 
@@ -97,6 +98,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         public async Task<IActionResult> ObterPacientesPorEstadoPaciente(Guid id)
         {
             var pacientes = await _pacienteService.BuscarPacientesPorEstadoAsync(id);
+            var viewModel = _mapper.Map<List<PacienteViewModel>>(pacientes);
             return View(pacientes);
         }
 

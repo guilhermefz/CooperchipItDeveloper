@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
-using Cooperchip.ItDeveloper.Mvc.Models;
+using Cooperchip.ITDeveloper.Application.ViewModels;
 
 namespace Cooperchip.ItDeveloper.Mvc.Mappers
 {

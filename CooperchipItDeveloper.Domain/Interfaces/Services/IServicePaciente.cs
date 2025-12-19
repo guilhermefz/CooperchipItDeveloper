@@ -1,5 +1,4 @@
 ﻿using Cooperchip.ItDeveloper.Domain.Entities;
-using Cooperchip.ItDeveloper.Mvc.Models;
 
 namespace CooperchipItDeveloper.Domain.Interfaces.Services
 {
@@ -11,9 +10,9 @@ namespace CooperchipItDeveloper.Domain.Interfaces.Services
 
         Task<Paciente> BuscarPacientePorIdAsync(Guid id);
 
-        Task<List<PacienteViewModel>> BuscarPacientesPorEstadoAsync(Guid estadoPacienteId);
+        Task<List<Paciente>> BuscarPacientesPorEstadoAsync(Guid estadoPacienteId);
 
-        Task<PacienteViewModel> PacienteDetalhe(Guid id);
+        Task<Paciente> PacienteDetalhe(Guid id);
 
         bool TemPaciente(Guid pacienteId);
 

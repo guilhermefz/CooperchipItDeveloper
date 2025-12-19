@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
-using Cooperchip.ItDeveloper.Mvc.Models;
-using CooperchipItDeveloper.Domain.Interfaces.Entidades;
+using CooperchipItDeveloper.Domain.Interfaces.Repository;
 using CooperchipItDeveloper.Domain.Interfaces.Services;
 
 namespace Cooperchip.ItDeveloper.Mvc.Services
@@ -33,24 +32,24 @@ namespace Cooperchip.ItDeveloper.Mvc.Services
             return await _repositoryPaciente.SelecionarPorId(id);
         }
 
-        public async Task<List<PacienteViewModel>> BuscarPacientesPorEstadoAsync(Guid estadoPacienteId)
+        public async Task<List<Paciente>> BuscarPacientesPorEstadoAsync(Guid estadoPacienteId)
         {
             var pacientes = await _repositoryPaciente.BuscarPacientesPorEstadoAsync(estadoPacienteId);
-            List<PacienteViewModel> listViewModel = new();
+            List<Paciente> listModel = new();
 
             foreach (var item in pacientes)
             {
-                listViewModel.Add (_mapper.Map<PacienteViewModel>(item));
+                listModel.Add(item);
             }
-            return listViewModel;
+            return listModel;
         }
 
-        public async Task<PacienteViewModel> PacienteDetalhe(Guid id)
+        public async Task<Paciente> PacienteDetalhe(Guid id)
         {
             var paciente = await _repositoryPaciente.PacienteDetalhe(id);
-            var viewModel = _mapper.Map<PacienteViewModel>(paciente);
+            var Model = _mapper.Map<Paciente>(paciente);
 
-            return viewModel;
+            return Model;
         }
         public bool TemPaciente(Guid pacienteId)
         {
