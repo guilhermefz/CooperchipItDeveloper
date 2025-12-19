@@ -2,7 +2,7 @@ using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
 using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Mvc.Mappers;
-using Cooperchip.ItDeveloper.Mvc.Services;
+using Cooperchip.ITDeveloper.Application.Services;
 using CooperchipItDeveloper.Mvc.Configuration;
 using CooperchipItDeveloper.Mvc.Data;
 using CooperchipItDeveloper.Mvc.Extensions;
@@ -10,7 +10,6 @@ using CooperchipItDeveloper.Mvc.Extensions.ExtensionsMethods;
 using CooperchipItDeveloper.Mvc.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Configuration;
 using System.Text;
 
 namespace CooperchipItDeveloper

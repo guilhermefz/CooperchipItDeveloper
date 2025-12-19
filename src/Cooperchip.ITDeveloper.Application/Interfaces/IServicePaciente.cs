@@ -1,6 +1,6 @@
 ﻿using Cooperchip.ItDeveloper.Domain.Entities;
 
-namespace CooperchipItDeveloper.Domain.Interfaces.Services
+namespace Cooperchip.ITDeveloper.Application.Interfaces
 {
     public interface IServicePaciente
     {

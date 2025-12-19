@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cooperchip.ITDeveloper.Repository.Entidade
+namespace CooperchipItDeveloper.Data.Repository
 {
     public class PacienteRepository : RepositoryGeneric<Paciente, Guid>, IRepositoryDomainPaciente
     {

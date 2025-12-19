@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Cooperchip.ITDeveloper.Application.ViewModels
+namespace CooperchipItDeveloper.Mvc.ViewModels
 {
     public class PacienteViewModel 
     {

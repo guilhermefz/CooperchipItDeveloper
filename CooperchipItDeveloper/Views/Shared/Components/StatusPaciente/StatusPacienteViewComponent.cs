@@ -1,11 +1,6 @@
-﻿using Cooperchip.ItDeveloper.Mvc.Extensions.ViewComponents.Helpers;
-using Cooperchip.ItDeveloper.Mvc.Services;
-using CooperchipItDeveloper.Mvc.Extensions.ViewComponents;
+﻿using CooperchipItDeveloper.Mvc.Extensions.ViewComponents;
 using CooperchipItDeveloper.Mvc.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.Elfie.Serialization;
-using Microsoft.EntityFrameworkCore;
-using Mono.TextTemplating;
 
 namespace CooperchipItDeveloper.Mvc.Views.Shared.Components.StatusPaciente
 {

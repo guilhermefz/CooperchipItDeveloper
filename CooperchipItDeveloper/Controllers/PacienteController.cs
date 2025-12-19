@@ -1,9 +1,8 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
-using Cooperchip.ItDeveloper.Mvc.Services;
-using Cooperchip.ITDeveloper.Application.ViewModels;
-using CooperchipItDeveloper.Domain.Interfaces.Services;
+using Cooperchip.ITDeveloper.Application.Interfaces;
+using CooperchipItDeveloper.Mvc.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;

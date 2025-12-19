@@ -1,9 +1,9 @@
-﻿using Cooperchip.ItDeveloper.Mvc.Services;
+﻿using Cooperchip.ITDeveloper.Application.Interfaces;
+using Cooperchip.ITDeveloper.Application.Services;
 using Cooperchip.ITDeveloper.CrossCutting.Helpers;
-using Cooperchip.ITDeveloper.Repository.Entidade;
+using CooperchipItDeveloper.Data.Repository;
 using CooperchipItDeveloper.Domain.Interfaces;
 using CooperchipItDeveloper.Domain.Interfaces.Repository;
-using CooperchipItDeveloper.Domain.Interfaces.Services;
 using CooperchipItDeveloper.Mvc.Extensions;
 using CooperchipItDeveloper.Mvc.Extensions.Services;
 using CooperchipItDeveloper.Mvc.Intra;

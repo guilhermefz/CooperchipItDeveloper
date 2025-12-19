@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
+using Cooperchip.ITDeveloper.Application.Interfaces;
 using CooperchipItDeveloper.Domain.Interfaces.Repository;
-using CooperchipItDeveloper.Domain.Interfaces.Services;
 
-namespace Cooperchip.ItDeveloper.Mvc.Services
+namespace Cooperchip.ITDeveloper.Application.Services
 {
     public class PacienteService : IServicePaciente
     {
