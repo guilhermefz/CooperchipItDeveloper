@@ -75,3 +75,14 @@ body {
     .imgProfileRegister:hover {
         transform: scale(1.05);
     }
+
+@media screen and (max-width: 1020px) {
+    .containerPai {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .menu-desktop {
+        display: none;
+    }
+}

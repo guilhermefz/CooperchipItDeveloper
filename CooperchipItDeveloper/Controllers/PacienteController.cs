@@ -10,7 +10,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class PacienteController : Controller
     {
         private readonly IServicePaciente _pacienteService;

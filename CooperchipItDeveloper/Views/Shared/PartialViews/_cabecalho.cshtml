@@ -47,34 +47,36 @@
         </div>
 
     </section>
-    <section class="bottom-header">
-        <div class="interface">
-            <nav class="nav-item">
-                <ul>
-                    <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
-                    <li><a asp-controller="Home" asp-action="Dashboard">DASHBOARD</a></li>
-                    <li class="drop-hover" style="position:relative; z-index: 1;">
-                        <a href="#">PACIENTES<i class="bi bi-caret-down-fill"></i></a>
-                        <div class="drop">
-                            <a asp-controller="Paciente" asp-action="Index">LISTAGEM</a>
-                            <a asp-controller="EstadoPaciente" asp-action="Index">ESTADO</a>
-                            <a asp-controller="EstadoPaciente" asp-action="Index">LEITOS</a>
-                            <a asp-controller="EstadoPaciente" asp-action="Index">CONSULTAS</a>
-                        </div>
-                    </li>
-                    <li class="drop-hover" style="position:relative; z-index: 1;">
-                        <a href="#">ARQUIVOS<i class="bi bi-caret-down-fill"></i></a>
-                        <div class="drop">
-                            <a asp-controller="Config" asp-action="MenuConfig" >IMPORTES</a>
-                            <a asp-controller="Generico" asp-action="Index">GENERICOS</a>
-                            <a asp-controller="Config" asp-action="ImportMedicamentos">MEDICAMENTOS</a>
-                            <a asp-controller="Cid" asp-action="Index">CIDS</a>
-                        </div>   
-                    </li>
-                    <li><a href="#">CONTATOS</a></li>
-                </ul>
-            </nav>
+    <div class="menu-desktop">
+        <section class="bottom-header">
+            <div class="interface">
+                <nav class="nav-item">
+                    <ul>
+                        <li><a asp-controller="Home" asp-action="Index">HOME</a></li>
+                        <li><a asp-controller="Home" asp-action="Dashboard">DASHBOARD</a></li>
+                        <li class="drop-hover" style="position:relative; z-index: 1;">
+                            <a href="#">PACIENTES<i class="bi bi-caret-down-fill"></i></a>
+                            <div class="drop">
+                                <a asp-controller="Paciente" asp-action="Index">LISTAGEM</a>
+                                <a asp-controller="EstadoPaciente" asp-action="Index">ESTADO</a>
+                                <a asp-controller="EstadoPaciente" asp-action="Index">LEITOS</a>
+                                <a asp-controller="EstadoPaciente" asp-action="Index">CONSULTAS</a>
+                            </div>
+                        </li>
+                        <li class="drop-hover" style="position:relative; z-index: 1;">
+                            <a href="#">ARQUIVOS<i class="bi bi-caret-down-fill"></i></a>
+                            <div class="drop">
+                                <a asp-controller="Config" asp-action="MenuConfig" >IMPORTES</a>
+                                <a asp-controller="Generico" asp-action="Index">GENERICOS</a>
+                                <a asp-controller="Config" asp-action="ImportMedicamentos">MEDICAMENTOS</a>
+                                <a asp-controller="Cid" asp-action="Index">CIDS</a>
+                            </div>   
+                        </li>
+                        <li><a href="#">CONTATOS</a></li>
+                    </ul>
+                </nav>
 
-        </div>
-    </section>
+            </div>
+        </section>
+    </div>
 </header>

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<CooperchipItDeveloper.Mvc.ViewModels.PacienteViewModel>
+
+@foreach (var item in Model)
+{
+    <div class="card mb-3 shadow-sm pacient-card">
+        <div class="card-body">
+            <h6 class="card-title mb-1">@item.Nome</h6>
+
+            <p class="mb-1 small text-muted">
+                <strong>Email:</strong> <span class="breakable">@item.Email</span>
+            </p>
+            <p class="mb-1 small text-muted">
+                <strong>CPF:</strong> <span class="breakable">@item.Cpf</span>
+            </p>
+            <p class="mb-2 small text-muted">
+                <strong>Estado:</strong> @item.EstadoPaciente?.Descricao
+            </p>
+
+            <div class="d-flex gap-2">
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm"><i class="bi bi-pen"></i></a>
+
+                <a href="#" class="details btn btn-outline-secondary btn-sm" data-id="@item.Id" title="Detalhes">
+                    <i class="bi bi-eye"></i>
+                </a>
+
+                <a href="#" class="delete btn btn-outline-danger btn-sm" data-id="@item.Id" title="Excluir">
+                    <i class="bi bi-trash3-fill"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+}
