@@ -1,5 +1,5 @@
-﻿using Cooperchip.ITDeveloper.Application.Interfaces;
-using Cooperchip.ITDeveloper.Application.Services;
+﻿using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Interfaces;
+using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Services;
 using Cooperchip.ITDeveloper.CrossCutting.Helpers;
 using CooperchipItDeveloper.Data.Repository;
 using CooperchipItDeveloper.Domain.Interfaces;

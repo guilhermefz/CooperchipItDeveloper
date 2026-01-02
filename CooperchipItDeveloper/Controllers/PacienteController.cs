@@ -1,9 +1,9 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
-using Cooperchip.ITDeveloper.Application.Interfaces;
-using CooperchipItDeveloper.Mvc.ViewModels;
-using Microsoft.AspNetCore.Authorization;
+using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Interfaces;
+using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Models;
+using Cooperchip.ITDeveloper.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -43,7 +43,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var paciente = new PacienteViewModel
+            var paciente = new PacienteFormModel
             {
                 EstadosPaciente = (await _pacienteService.ListarEstadoPaciente())
                           .Select(e => new SelectListItem
@@ -58,7 +58,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Create(PacienteViewModel model)
+        public async Task<IActionResult> Create(PacienteFormModel model)
         {
             
             if (ModelState.IsValid)
@@ -76,7 +76,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                     return View(model);
                 }
             }
-            model = new PacienteViewModel
+            model = new PacienteFormModel
             {
                 EstadosPaciente = (await _pacienteService.ListarEstadoPaciente())
                           .Select(e => new SelectListItem
@@ -105,11 +105,11 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         {
             _logger.LogError("Teste de log Serilog(Seq) - A tela inicial de pacientes foi aberta.");
             var pacientes = await _pacienteService.BuscarPacientesAsync();
-            List<PacienteViewModel> list = new();
+            List<PacienteGridModel> list = new();
 
             foreach ( var item in pacientes)
             {
-                list.Add (_mapper.Map<PacienteViewModel>(item));
+                list.Add (_mapper.Map<PacienteGridModel>(item));
             }
             return View(list);    
         }

@@ -2,7 +2,7 @@ using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
 using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Mvc.Mappers;
-using Cooperchip.ITDeveloper.Application.Services;
+using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Services;
 using CooperchipItDeveloper.Mvc.Configuration;
 using CooperchipItDeveloper.Mvc.Data;
 using CooperchipItDeveloper.Mvc.Extensions;
