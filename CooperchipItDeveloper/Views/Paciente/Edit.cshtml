@@ -9,48 +9,36 @@
 <form asp-action="Edit">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+    <q-field for="Nome" />
+
     <div class="mb-3">
-        <label asp-for="Nome" class="control-label">Paciente</label>
-        <input asp-for=Nome class="form-control" placeholder="Digite o nome do paciente" autocomplete="off">
-        <span asp-validation-for="Nome" class="text-danger"></span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="DataNascimento" typeof="date" class="control-label">Data de Nascimento</label>
-        <input asp-for=DataNascimento class="form-control" placeholder="Digite o nascimento do paciente">
+        <label asp-for="DataNascimento" class="control-label">Data de Internação</label>
+        <input asp-for=DataNascimento class="form-control" placeholder="Digite a data de nascimento do paciente">
         <span asp-validation-for="DataNascimento" class="text-danger"></span>
     </div>
+
     <div class="mb-3">
-        <label asp-for="DataInternacao" type="date" class="control-label">Data de Internação</label>
+        <label asp-for="DataInternacao" class="control-label">Data de Internação</label>
         <input asp-for=DataInternacao class="form-control" placeholder="Digite a data de internação do paciente">
         <span asp-validation-for="DataInternacao" class="text-danger"></span>
     </div>
-    <div class="mb-3">
-        <label asp-for="Email" class="control-label">Email</label>
-        <input asp-for=Email class="form-control" placeholder="Digite o Email do paciente">
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="Cpf" class="control-label">CPF</label>
-        <input asp-for=Cpf class="form-control" placeholder="Digite o CPF do paciente">
-        <span asp-validation-for="Cpf" class="text-danger"></span>
-    </div>
-    <div class="mb-3">
-        <label asp-for="Rg" class="control-label">RG</label>
-        <input asp-for=Rg class="form-control" placeholder="Digite o RG do paciente">
-    </div>
-    <div class="mb-3">
-        <label asp-for="RgOrgao" class="control-label">RG Orgão</label>
-        <input asp-for=RgOrgao class="form-control" placeholder="Digite o orgão RG do paciente">
-    </div>
+
+    <q-field for="Email" />
+
+    <q-field for="Cpf" />
+
+    <q-field for="Rg" />
+
+    <q-field for="RgOrgao" />
+
     <div class="mb-3">
         <label asp-for="RgDataEmissao" class="control-label">Data de Emissão do RG</label>
-        <input asp-for=RgDataEmissao class="form-control" placeholder="Digite a data de emissão do RG">
+        <input asp-for=RgDataEmissao class="form-control" placeholder="Digite a data de emissão do RG do paciente">
+        <span asp-validation-for="RgDataEmissao" class="text-danger"></span>
     </div>
-    <div class="mb-3">
-        <label asp-for="Motivo" class="control-label">Motivo da internação</label>
-        <input asp-for=Motivo class="form-control" placeholder="Digite o motivo da internação do paciente">
-        <span asp-validation-for="Motivo" class="text-danger"></span>
-    </div>
+
+    <q-field for="Motivo" />
+
     <div class="form-check form-switch">
         <input class="form-check-input" asp-for="Ativo" type="checkbox" role="switch" id="switchCheckDefault">
         <label class="form-check-label" for="switchCheckAtivo">Paciente Ativo</label>

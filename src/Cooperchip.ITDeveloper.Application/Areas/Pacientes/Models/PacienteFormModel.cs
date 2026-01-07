@@ -58,6 +58,7 @@ namespace Cooperchip.ITDeveloper.Application.Areas.Pacientes.Models
         [MaxLength(15, ErrorMessage = "O campo {0} não pode ter mais que (1) caracteres. ")]
         public string? Rg { get; set; }
 
+        [DisplayName("Orgão do RG")]
         public string? RgOrgao { get; set; }
 
         [Display(Name = "Data de Emissão da RG")]
