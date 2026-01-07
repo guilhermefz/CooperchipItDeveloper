@@ -3,11 +3,13 @@ using AspNetCoreHero.ToastNotification.Extensions;
 using Cooperchip.ItDeveloper.Data.Data.ORM;
 using Cooperchip.ItDeveloper.Mvc.Mappers;
 using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Services;
+using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Validators;
 using CooperchipItDeveloper.Mvc.Configuration;
 using CooperchipItDeveloper.Mvc.Data;
 using CooperchipItDeveloper.Mvc.Extensions;
 using CooperchipItDeveloper.Mvc.Extensions.ExtensionsMethods;
 using CooperchipItDeveloper.Mvc.Services;
+using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
@@ -28,6 +30,7 @@ namespace CooperchipItDeveloper
             });
 
             builder.Services.AddControllersWithViews();
+            builder.Services.AddValidatorsFromAssemblyContaining<PacienteValidator>();
             builder.Services.AddAutoMapper(typeof(PacienteMapper));
 
             builder.Services.AddDbContext<ITDeveloperDbContext>(options =>

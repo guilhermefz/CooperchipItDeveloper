@@ -76,16 +76,15 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                     return View(model);
                 }
             }
-            model = new PacienteFormModel
-            {
-                EstadosPaciente = (await _pacienteService.ListarEstadoPaciente())
-                          .Select(e => new SelectListItem
-                          {
-                              Value = e.Id.ToString(),
-                              Text = e.Descricao
-                          })
-                          .ToList()
-            };
+
+            model.EstadosPaciente = (await _pacienteService.ListarEstadoPaciente())
+                      .Select(e => new SelectListItem
+                      {
+                          Value = e.Id.ToString(),
+                          Text = e.Descricao
+                      })
+                      .ToList();
+
             _notyf.Error("Ocorreu um erro ao salvar, verifique se os campos foram escritos corretamente!");
             //ViewBag.EstadoPaciente = new SelectList(await _pacienteService.ListarEstadoPaciente(), "Id", "Descricao");
             return View(model);
@@ -124,7 +123,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
             }
 
             ViewBag.EstadoPaciente = new SelectList(await _pacienteService.ListarEstadoPaciente(), "Id", "Descricao");
-            var viewModel = _mapper.Map<PacienteViewModel>(paciente);
+            var viewModel = _mapper.Map<PacienteFormModel>(paciente);
 
             viewModel.EstadosPaciente = (await _pacienteService.ListarEstadoPaciente())
                           .Select(e => new SelectListItem
@@ -138,7 +137,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(Guid id, PacienteViewModel model)
+        public async Task<IActionResult> Edit(Guid id, PacienteFormModel model)
         {
             if (model.Id != id)
             {
