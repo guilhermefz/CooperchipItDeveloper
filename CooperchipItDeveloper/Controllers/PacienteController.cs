@@ -53,6 +53,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                           })
                           .ToList()
             };
+            ViewBag.EstadoPaciente = new SelectList(await _pacienteService.ListarEstadoPaciente(), "Id", "Descricao");
             return await Task.FromResult(View(paciente));
         }
 
@@ -86,7 +87,7 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                       .ToList();
 
             _notyf.Error("Ocorreu um erro ao salvar, verifique se os campos foram escritos corretamente!");
-            //ViewBag.EstadoPaciente = new SelectList(await _pacienteService.ListarEstadoPaciente(), "Id", "Descricao");
+            ViewBag.EstadoPaciente = new SelectList(await _pacienteService.ListarEstadoPaciente(), "Id", "Descricao");
             return View(model);
         }
 

@@ -43,27 +43,13 @@
         <input class="form-check-input" asp-for="Ativo" type="checkbox" role="switch" id="switchCheckDefault">
         <label class="form-check-label" for="switchCheckAtivo">Paciente Ativo</label>
     </div>
-    <div>
-        <label asp-for="EstadoPacienteId" class="control-label"></label>
-        <select asp-for="EstadoPacienteId" asp-items="ViewBag.EstadoPaciente" class="form-select">
-            <option value="">-- Selecione o estado do paciente--</option>
-        </select>
-        <span asp-validation-for="EstadoPacienteId" class="text-danger"></span>
-    </div>
-    <div class="mt-5 mb-3">
-        <label asp-for="TipoPaciente" class="control-label"></label>
-        <select class="form-select" asp-for="TipoPaciente" asp-items="@(new SelectList(Enum.GetValues(typeof(TipoPaciente))))">
-            <option value="">-- Selecione o tipo de paciente --</option>
-        </select>
-        <span asp-validation-for="TipoPaciente" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="Sexo" class="control-label"></label>
-        <select class="form-select" asp-for="Sexo" asp-items="@(new SelectList(Enum.GetValues(typeof(Sexo))))" class="form-control">
-            <option value="">-- Selecione o sexo do paciente --</option>
-        </select>
-        <span asp-validation-for="Sexo" class="text-danger"></span>
-    </div>
+
+    <q-select for="EstadoPacienteId" items="ViewBag.EstadoPaciente" />
+    
+    <q-select for="TipoPaciente" items="@(new SelectList(Enum.GetValues(typeof(TipoPaciente))))" />
+    
+    <q-select for="Sexo" items="@(new SelectList(Enum.GetValues(typeof(Sexo))))" />
+
     <div class="form-group">
         <input type="submit" value="Edit" class="btn btn-success" />
     </div>
