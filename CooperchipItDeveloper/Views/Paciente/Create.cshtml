@@ -11,48 +11,40 @@
 <form asp-action="Create">
     <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-    <q-field for="Nome" />
+    <div class="row">
 
-    <div class="mb-3">
-        <label asp-for="DataNascimento" class="control-label">Data de Internação</label>
-        <input asp-for=DataNascimento class="form-control" placeholder="Digite a data de nascimento do paciente">
-        <span asp-validation-for="DataNascimento" class="text-danger"></span>
-    </div>
+        <q-field for="Nome" col="8"/>
 
-    <div class="mb-3">
-        <label asp-for="DataInternacao" class="control-label">Data de Internação</label>
-        <input asp-for=DataInternacao class="form-control" placeholder="Digite a data de internação do paciente">
-        <span asp-validation-for="DataInternacao" class="text-danger"></span>
-    </div>
+        <q-field for="Cpf" col="4"/>
 
-    <q-field for="Email" />
+        <q-field for="Email" col="6"/>
 
-    <q-field for="Cpf" />
+        <q-field for="DataNascimento" col="3" />
 
-    <q-field for="Rg" />
+        <q-field for="DataInternacao" col="3"/>
 
-    <q-field for="RgOrgao" />
+        <q-field for="Rg" col="4"/>
 
-    <div class="mb-3">
-        <label asp-for="RgDataEmissao" class="control-label">Data de Emissão do RG</label>
-        <input asp-for=RgDataEmissao class="form-control" placeholder="Digite a data de emissão do RG do paciente">
-        <span asp-validation-for="RgDataEmissao" class="text-danger"></span>
-    </div>
+        <q-field for="RgOrgao" col="2"/>
 
-    <q-field for="Motivo" />
+        <q-field for="RgDataEmissao" col="3"/>
 
-    <div class="form-check form-switch">
-        <input class="form-check-input" asp-for="Ativo" type="checkbox" role="switch" id="switchCheckDefault">
-        <label class="form-check-label" for="switchCheckAtivo">Paciente Ativo</label>
-    </div>
+        <q-field for="Motivo" />
+
+        <div class="form-check form-switch">
+            <input class="form-check-input" asp-for="Ativo" type="checkbox" role="switch" id="switchCheckDefault">
+            <label class="form-check-label" for="switchCheckAtivo">Paciente Ativo</label>
+        </div>
     
-    <q-select for="EstadoPacienteId" items="ViewBag.EstadoPaciente" />
+        <q-select for="EstadoPacienteId" items="ViewBag.EstadoPaciente" col="4"/>
 
-    <q-select for="TipoPaciente" items="@(new SelectList(Enum.GetValues(typeof(TipoPaciente))))" />
+        <q-select for="TipoPaciente" items="@(new SelectList(Enum.GetValues(typeof(TipoPaciente))))" col="4"/>
 
-    <q-select for="Sexo" items="@(new SelectList(Enum.GetValues(typeof(Sexo))))" />
+        <q-select for="Sexo" items="@(new SelectList(Enum.GetValues(typeof(Sexo))))" col="4"/>
 
-    <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-success" />
+        <div class="form-group">
+            <a asp-action="Index" asp-controller="Paciente" class="btn btn-dark">Voltar para listagem</a>
+            <a asp-action="Create" asp-controller="Paciente" class="btn btn-outline-primary">Salvar Paciente</a>
+        </div>
     </div>
 </form>

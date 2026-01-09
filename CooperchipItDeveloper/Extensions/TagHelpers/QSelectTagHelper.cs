@@ -15,6 +15,9 @@ namespace CooperchipItDeveloper.Mvc.Extensions.TagHelpers
             _htmlGenerator = htmlGenerator;
         }
 
+        [HtmlAttributeName("col")]
+        public int Col { get; set; }
+
         [HtmlAttributeName("for")]
         public ModelExpression For {  get; set; }
 
@@ -29,7 +32,11 @@ namespace CooperchipItDeveloper.Mvc.Extensions.TagHelpers
         {
             output.TagName = "div";
             output.TagMode = TagMode.StartTagAndEndTag;
-            output.Attributes.Add("class", "mb-3");
+
+            var cssClass = "mb-3";
+            if (Col > 0) cssClass += $" col-md-{Col}";
+
+            output.Attributes.Add("class", cssClass);
 
             var label = _htmlGenerator.GenerateLabel(
                 ViewContext,

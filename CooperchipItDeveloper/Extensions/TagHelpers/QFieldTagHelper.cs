@@ -17,6 +17,9 @@ namespace CooperchipItDeveloper.Mvc.Extensions.TagHelpers
         [HtmlAttributeName("for")]
         public ModelExpression For {  get; set; }
 
+        [HtmlAttributeName("col")]
+        public int Col { get; set; } = 0;
+
         [ViewContext]
         [HtmlAttributeNotBound]
         public ViewContext ViewContext { get; set; }
@@ -25,7 +28,12 @@ namespace CooperchipItDeveloper.Mvc.Extensions.TagHelpers
         {
             output.TagName = "div";
             output.TagMode = TagMode.StartTagAndEndTag;
-            output.Attributes.Add("class", "mb-3");
+            var classNames = "mb-3";
+
+            if (Col > 0)
+                classNames += $" col-md-{Col}";
+            
+            output.Attributes.Add("class", classNames);
 
             var label = _htmlGenerator.GenerateLabel(
                 ViewContext,
