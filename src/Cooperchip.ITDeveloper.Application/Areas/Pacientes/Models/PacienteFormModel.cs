@@ -1,5 +1,6 @@
 ﻿using Cooperchip.ItDeveloper.Domain.Entities;
 using Cooperchip.ItDeveloper.Domain.Enuns;
+using Cooperchip.ITDeveloper.Application.Extensions;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -39,6 +40,8 @@ namespace Cooperchip.ITDeveloper.Application.Areas.Pacientes.Models
         [Required(ErrorMessage = "O campo {0} é obrigatório.")]
         public string? Email { get; set; }
 
+        [Display(Name = "Paciente Ativo")]
+        [Switch]
         public bool Ativo { get; set; }
 
         [DisplayName("CPF")]

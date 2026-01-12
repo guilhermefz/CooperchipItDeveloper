@@ -29,10 +29,7 @@
 
         <q-field for="Motivo" />
 
-        <div class="form-check form-switch">
-            <input class="form-check-input" asp-for="Ativo" type="checkbox" role="switch" id="switchCheckDefault">
-            <label class="form-check-label" for="switchCheckAtivo">Paciente Ativo</label>
-        </div>
+        <q-field for="Ativo" col="3"/>
 
         <q-select for="EstadoPacienteId" items="ViewBag.EstadoPaciente" col="4" />
     
