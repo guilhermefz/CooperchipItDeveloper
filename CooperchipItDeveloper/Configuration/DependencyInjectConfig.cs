@@ -4,6 +4,7 @@ using Cooperchip.ITDeveloper.CrossCutting.Helpers;
 using CooperchipItDeveloper.Data.Repository;
 using CooperchipItDeveloper.Domain.Interfaces;
 using CooperchipItDeveloper.Domain.Interfaces.Repository;
+using CooperchipItDeveloper.Domain.Mensageria;
 using CooperchipItDeveloper.Mvc.Extensions;
 using CooperchipItDeveloper.Mvc.Extensions.Services;
 using CooperchipItDeveloper.Mvc.Intra;
@@ -26,6 +27,8 @@ namespace CooperchipItDeveloper.Mvc.Configuration
             services.AddScoped<IRepositoryDomainPaciente, PacienteRepository>();
 
             services.AddScoped<IServicePaciente, PacienteService>();
+
+            services.AddScoped<INotification, Notification>();
 
             return services;
         }
