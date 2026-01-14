@@ -4,20 +4,22 @@ using Cooperchip.ItDeveloper.Domain.Entities;
 using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Interfaces;
 using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Models;
 using Cooperchip.ITDeveloper.Application.ViewModels;
+using CooperchipItDeveloper.Domain.Mensageria;
+using CooperchipItDeveloper.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cooperchip.ItDeveloper.Mvc.Controllers
 {
-    public class PacienteController : Controller
+    public class PacienteController : BaseController
     {
         private readonly IServicePaciente _pacienteService;
         private readonly IMapper _mapper;
         private readonly INotyfService _notyf;
         private readonly ILogger<PacienteController> _logger;
 
-        public PacienteController(IServicePaciente pacienteService, IMapper mapper, INotyfService notyf, ILogger<PacienteController> logger)
+        public PacienteController(IServicePaciente pacienteService, IMapper mapper, INotyfService notyf, ILogger<PacienteController> logger, INotification notification) : base(notification)
         {
             _pacienteService = pacienteService;
             _mapper = mapper;
@@ -70,6 +72,9 @@ namespace Cooperchip.ItDeveloper.Mvc.Controllers
                 try
                 {
                     await _pacienteService.SalvarPacienteAsync(paciente);
+
+                    if(!OperacaoValida()) return View(model);
+
                     return Redirect(nameof(Index));
                 }
                 catch (Exception ex)

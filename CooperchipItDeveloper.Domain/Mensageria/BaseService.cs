@@ -26,7 +26,7 @@ namespace CooperchipItDeveloper.Domain.Mensageria
             _notification.Handle(new Notificacao(mensagem));
         }
 
-        protected bool ExecutarValidacao<TVal, T>(TVal validacao, T entidade) where TVal : AbstractValidator<T> where T:EntityBase
+        protected bool ExecutarValidacao<TVal, T>(TVal validacao, T entidade) where TVal : AbstractValidator<T>
         {
             var validator = validacao.Validate(entidade);
             if (validator.IsValid) return true;

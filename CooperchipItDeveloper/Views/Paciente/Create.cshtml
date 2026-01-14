@@ -8,43 +8,41 @@
 
 <h2>Cadastro de Pacientes</h2>
 
-<form asp-action="Create">
+<form asp-action="Create" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+    <vc:summary></vc:summary>
 
     <div class="row">
 
-        <q-field for="Nome" col="8"/>
+        <q-field for="@Model.Nome" col="8"/>
 
-        <q-field for="Cpf" col="4"/>
+        <q-field for="@Model.Cpf" col="4"/>
 
-        <q-field for="Email" col="6"/>
+        <q-field for="@Model.Email" col="6"/>
 
-        <q-field for="DataNascimento" col="3" />
+        <q-field for="@Model.DataNascimento" col="3" />
 
-        <q-field for="DataInternacao" col="3"/>
+        <q-field for="@Model.DataInternacao" col="3" />
 
-        <q-field for="Rg" col="4"/>
+        <q-field for="@Model.Rg" col="4" />
 
-        <q-field for="RgOrgao" col="2"/>
+        <q-field for="@Model.RgOrgao" col="2" />
 
-        <q-field for="RgDataEmissao" col="3"/>
+        <q-field for="@Model.RgDataEmissao" col="3" />
 
-        <q-field for="Motivo" />
+        <q-field for="@Model.Motivo" />
 
-        <div class="form-check form-switch">
-            <input class="form-check-input" asp-for="Ativo" type="checkbox" role="switch" id="switchCheckDefault">
-            <label class="form-check-label" for="switchCheckAtivo">Paciente Ativo</label>
-        </div>
-    
-        <q-select for="EstadoPacienteId" items="ViewBag.EstadoPaciente" col="4"/>
+        <q-field for="@Model.Ativo" />
 
-        <q-select for="TipoPaciente" items="@(new SelectList(Enum.GetValues(typeof(TipoPaciente))))" col="4"/>
+        <q-select for="@Model.EstadoPacienteId" items="ViewBag.EstadoPaciente" col="4" />
 
-        <q-select for="Sexo" items="@(new SelectList(Enum.GetValues(typeof(Sexo))))" col="4"/>
+        <q-select for="@Model.TipoPaciente" items="@(new SelectList(Enum.GetValues(typeof(TipoPaciente))))" col="4" />
+
+        <q-select for="@Model.Sexo" items="@(new SelectList(Enum.GetValues(typeof(Sexo))))" col="4" />
 
         <div class="form-group">
             <a asp-action="Index" asp-controller="Paciente" class="btn btn-dark">Voltar para listagem</a>
-            <a asp-action="Create" asp-controller="Paciente" class="btn btn-outline-primary">Salvar Paciente</a>
+            <button type="submit" class="btn btn-outline-primary">Salvar Paciente</button>
         </div>
     </div>
 </form>

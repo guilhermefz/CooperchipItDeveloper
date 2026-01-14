@@ -7,6 +7,7 @@ namespace CooperchipItDeveloper.Domain.Mensageria
 
         public Notification()
         {
+            _notificacoes = new List<Notificacao>();
         }
 
         public void Handle(Notificacao notificacao)

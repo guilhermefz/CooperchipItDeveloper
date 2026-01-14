@@ -1,17 +1,19 @@
 ﻿using AutoMapper;
 using Cooperchip.ItDeveloper.Domain.Entities;
 using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Interfaces;
-
+using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Models;
+using Cooperchip.ITDeveloper.Application.Areas.Pacientes.Validators;
 using CooperchipItDeveloper.Domain.Interfaces.Repository;
+using CooperchipItDeveloper.Domain.Mensageria;
 
 namespace Cooperchip.ITDeveloper.Application.Areas.Pacientes.Services
 {
-    public class PacienteService : IServicePaciente
+    public class PacienteService : BaseService, IServicePaciente
     {
         private readonly IMapper _mapper;
         private readonly IRepositoryDomainPaciente _repositoryPaciente;
 
-        public PacienteService(IMapper mapper, IRepositoryDomainPaciente repositoryPaciente)
+        public PacienteService(IMapper mapper, IRepositoryDomainPaciente repositoryPaciente, INotification notification) : base(notification)
         {
             _mapper = mapper;
             _repositoryPaciente = repositoryPaciente;
@@ -19,6 +21,11 @@ namespace Cooperchip.ITDeveloper.Application.Areas.Pacientes.Services
 
         public async Task SalvarPacienteAsync(Paciente paciente)
         {
+            var pacienteFormModel = _mapper.Map<PacienteFormModel>(paciente);
+
+            if (!ExecutarValidacao(new PacienteValidator(), pacienteFormModel))
+                return;
+
             await _repositoryPaciente.Inserir(paciente);
         }
 
